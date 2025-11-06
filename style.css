@@ -1,160 +1,55 @@
-:root {
-  --red: #E6002D;
-  --dark: #111;
-  --gray: #555;
-  --bg: #f8f8f8;
-  --radius: 20px;
-}
-
-/* 기본 설정 */
+/* 공통 스타일 */
 body {
   margin: 0;
-  font-family: 'Noto Sans KR', sans-serif;
-  color: var(--dark);
-  background: var(--bg);
-  line-height: 1.7;
+  font-family: 'Inter', sans-serif;
 }
 
-/* 상단 이미지 */
-.hero {
-  width: 100%;
-  overflow: hidden;
-}
+/* 상단 사진 */
 .hero-img {
   width: 100%;
-  height: auto;
   display: block;
-  object-fit: cover;
 }
 
-/* SNS 링크 섹션 */
+/* SNS 섹션 */
 .sns-section {
-  background: #fff;
-  border-bottom: 2px solid var(--red);
   text-align: center;
-  padding: 30px 15px 40px;
+  padding: 40px 0;
 }
-.sns-section h2 {
-  font-size: 24px;
-  color: #222;
-  margin-bottom: 20px;
-}
+
 .sns-links {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 40px;
+  flex-wrap: wrap;
 }
+
 .sns-item {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  background: #fafafa;
-  padding: 10px 16px;
-  border-radius: 10px;
-  text-decoration: none;
-  color: var(--dark);
-  font-weight: 500;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.06);
-}
-.sns-item img {
-  width: 26px;
-  height: 26px;
-}
-.sns-item span {
-  font-size: 15px;
-}
-
-/* 메인 레이아웃 */
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  max-width: 1400px;
-  margin: 60px auto;
-  gap: 50px;
-  padding: 0 30px;
-}
-
-/* 프로필 플래그 */
-.profile {
-  flex: 1 1 420px;
-  background: #fff;
-  border-radius: var(--radius);
-  box-shadow: 0 3px 14px rgba(0,0,0,0.1);
-  padding: 40px 30px;
-}
-.profile-photo {
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 5px solid var(--red);
-  display: block;
-  margin: 0 auto 25px auto;
-}
-.profile h2 {
-  text-align: center;
-  font-size: 26px;
-  color: var(--red);
-  margin-bottom: 25px;
-}
-.flag-box h3 {
-  font-size: 19px;
-  color: #222;
-  margin-bottom: 8px;
-}
-.flag-box p {
-  font-size: 16px;
-  color: var(--gray);
-  margin-bottom: 20px;
-}
-
-/* 영상 */
-.videos {
-  flex: 2 1 850px;
-  display: flex;
   flex-direction: column;
-  gap: 40px;
-}
-.video-item {
-  background: #fff;
-  border-radius: var(--radius);
-  box-shadow: 0 3px 10px rgba(0,0,0,.08);
-  padding: 25px;
-}
-.video-item h2 {
-  color: #222;
-  font-size: 22px;
-  margin-bottom: 12px;
-}
-.video-item iframe {
-  width: 100%;
-  height: 320px;
-  border-radius: 12px;
-  border: none;
-}
-.video-desc {
-  font-size: 16px;
-  color: var(--gray);
-  margin-top: 8px;
-  line-height: 1.6;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+  gap: 10px;
 }
 
-/* 푸터 */
-footer {
-  text-align: center;
-  padding: 35px 0;
-  font-size: 14px;
-  color: #777;
-  background: #fff;
-  border-top: 1px solid #eee;
+.sns-item img {
+  width: 60px;
+  height: 60px;
 }
 
-/* 반응형 */
-@media (max-width: 900px) {
-  .content { flex-direction: column; align-items: center; }
-  .videos, .profile { width: 100%; }
-  .video-item iframe { height: 240px; }
-  .sns-links { flex-direction: column; align-items: center; }
+/* ✅ 네이버 아이콘 (네가 만든 스타일 적용) */
+.naver-icon {
+  width: 87px;
+  height: 87px;
+  background: #00DC00;
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+  font-size: 60px;
+  color: #FFFFFF;
+  user-select: none;
 }
