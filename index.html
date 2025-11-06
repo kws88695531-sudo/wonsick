@@ -13,13 +13,9 @@
   </header>
 
   <main class="intro-section">
-    <!-- 왼쪽: 프로필 -->
+    <!-- 왼쪽 프로필 -->
     <div class="profile-area">
-      <img 
-        src="profile.jpg"
-        alt="공원식 프로필"
-        class="profile-photo"
-      />
+      <img src="profile.jpg" alt="공원식 프로필" class="profile-photo" />
       <div class="profile-text">
         <h2>프로필</h2>
         <ul>
@@ -35,36 +31,33 @@
       </div>
     </div>
 
-    <!-- 오른쪽: 영상 섹션 -->
+    <!-- 오른쪽 영상 -->
     <div class="video-area">
       <h2>공원식의 발자취</h2>
-      <div class="video-thumb" data-video-id="Qf8Fokw11YQ" aria-label="공원식의 발자취 재생">
-        <img src="https://img.youtube.com/vi/Qf8Fokw11YQ/hqdefault.jpg" alt="공원식의 발자취 썸네일" />
-        <button class="play-btn" aria-label="재생">
-          <span class="play-icon" aria-hidden="true"></span>
-          재생
-        </button>
-        <noscript>
-          <a class="noscript-link" href="https://youtube.com/shorts/Qf8Fokw11YQ" target="_blank" rel="noopener">영상 보러가기</a>
-        </noscript>
+      <div class="video-box">
+        <iframe 
+          src="https://www.youtube.com/embed/Qf8Fokw11YQ"
+          title="공원식의 발자취"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
       </div>
       <p class="video-desc">
-        포항에서 시작된 헌신과 리더십의 여정을 담은 영상입니다.
+        성장의 기록 — 어린 시절부터 포항의 리더로 성장해온 발자취를 보여줍니다.
       </p>
 
-      <h2 style="margin-top:28px;">비전 인터뷰</h2>
-      <div class="video-thumb" data-video-id="_CjKtxwPCUA" aria-label="비전 인터뷰 재생">
-        <img src="https://img.youtube.com/vi/_CjKtxwPCUA/hqdefault.jpg" alt="비전 인터뷰 썸네일" />
-        <button class="play-btn" aria-label="재생">
-          <span class="play-icon" aria-hidden="true"></span>
-          재생
-        </button>
-        <noscript>
-          <a class="noscript-link" href="https://youtu.be/_CjKtxwPCUA" target="_blank" rel="noopener">영상 보러가기</a>
-        </noscript>
+      <h2 style="margin-top:28px;">비전과 업적</h2>
+      <div class="video-box">
+        <iframe 
+          src="https://www.youtube.com/embed/_CjKtxwPCUA"
+          title="공원식 업적 영상"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
       </div>
       <p class="video-desc">
-        포항의 미래를 위한 비전과 정책 방향을 설명하는 인터뷰 영상입니다.
+        포항의 발전을 위해 걸어온 시간들.<br>
+        주요 업적과 정책, 시민과 함께한 현장의 모습을 담았습니다.
       </p>
     </div>
   </main>
@@ -90,33 +83,5 @@
   <footer>
     <p>© 2025 공원식 소개 페이지 | 국민의힘 톤 디자인</p>
   </footer>
-
-  <script>
-    document.querySelectorAll('.video-thumb').forEach(box => {
-      box.addEventListener('click', () => {
-        const id = box.getAttribute('data-video-id');
-        const iframe = document.createElement('iframe');
-        iframe.setAttribute('title', 'YouTube video player');
-        iframe.setAttribute('allowfullscreen', '');
-        iframe.setAttribute('frameborder', '0');
-        iframe.setAttribute(
-          'src',
-          `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&rel=0`
-        );
-        iframe.setAttribute('tabindex', '0');
-
-        box.classList.add('playing');
-        box.innerHTML = '';
-        box.appendChild(iframe);
-      });
-      box.setAttribute('tabindex', '0');
-      box.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          box.click();
-        }
-      });
-    });
-  </script>
 </body>
 </html>
