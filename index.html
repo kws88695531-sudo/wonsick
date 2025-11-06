@@ -8,12 +8,12 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    /* ✅ SNS 네이버 아이콘 사이즈 통일 */
+    /* ✅ 네이버 아이콘 자동 사이즈 조정 (더 작게) */
     .naver-icon {
-      width: 60px;
-      height: 60px;
+      width: 48px;
+      height: 48px;
       background: #00DC00;
-      border-radius: 12px;
+      border-radius: 10px;
 
       display: flex;
       align-items: center;
@@ -21,7 +21,7 @@
 
       font-family: 'Inter', sans-serif;
       font-weight: 700;
-      font-size: 38px;
+      font-size: 30px;
       color: #FFFFFF;
 
       user-select: none;
@@ -41,26 +41,22 @@
     <h2>공식 채널 바로가기</h2>
 
     <div class="sns-links">
-
-      <!-- ✅ 유튜브 -->
       <a href="https://www.youtube.com/@%EA%B3%B5%EC%9B%90%EC%8B%9DTV" target="_blank" class="sns-item">
         <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="유튜브 아이콘">
         <span>공원식TV</span>
       </a>
 
-      <!-- ✅ 인스타 -->
       <a href="https://www.instagram.com/kws5307/" target="_blank" class="sns-item">
         <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="인스타그램 아이콘">
         <span>인스타그램</span>
       </a>
 
-      <!-- ✅ 페이스북 -->
       <a href="https://www.facebook.com/kws5307" target="_blank" class="sns-item">
         <img src="https://cdn-icons-png.flaticon.com/512/1384/1384053.png" alt="페이스북 아이콘">
         <span>페이스북</span>
       </a>
 
-      <!-- ✅ 네이버 블로그(맞춘 사이즈) -->
+      <!-- ✅ 사이즈 자연스러워진 네이버 아이콘 -->
       <a href="https://blog.naver.com/kws5307" target="_blank" class="sns-item">
         <div class="naver-icon">N</div>
         <span>네이버 블로그</span>
@@ -70,15 +66,14 @@
   </section>
 
 
-
-  <!-- ===========================
-       ✅ 메인 콘텐츠
-       =========================== -->
+  <!-- ======================
+       ✅ 메인 콘텐츠 
+       ====================== -->
   <main class="content">
 
-    <!-- 왼쪽: 공원식 플래그 -->
+    <!-- 왼쪽: 공원식 플래그 (프로필 이미지 삭제됨) -->
     <section class="profile">
-      <img src="profile.jpg" alt="공원식 프로필" class="profile-photo" />
+
       <h2>공원식의 4가지 플래그</h2>
 
       <div class="flag-box">
@@ -101,28 +96,18 @@
     <!-- 오른쪽: 영상 -->
     <section class="videos">
 
-      <!-- ✅ 1번째 영상 -->
       <div class="video-item">
         <h2>공원식의 발자취</h2>
-        <iframe 
-          src="https://www.youtube.com/embed/Qf8Fokw11YQ"
-          title="공원식의 발자취"
-          frameborder="0"
-          allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/Qf8Fokw11YQ" allowfullscreen></iframe>
         <p class="video-desc">
           흘러가는 시간 속에서 쌓인 공원식의 이야기들.<br>
           짧지만 깊은, 세월의 흔적을 담은 순간들을 함께 느껴보세요.
         </p>
       </div>
 
-      <!-- ✅ 2번째 영상 -->
       <div class="video-item">
         <h2>세월 영상</h2>
-        <iframe 
-          src="https://www.youtube.com/embed/_CjKtxwPCUA"
-          title="공원식 업적 영상"
-          frameborder="0"
-          allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/_CjKtxwPCUA" allowfullscreen></iframe>
         <p class="video-desc">
           변화의 순간마다 시민과 함께 걸어온 길.<br>
           그 길의 한가운데에는 늘, 공원식이 함께했습니다.
@@ -133,9 +118,6 @@
 
   </main>
 
-
-
-  <!-- FOOTER -->
   <footer>
     <p>© 2025 공원식 소개 페이지 | 포항의 실용 리더</p>
   </footer>
