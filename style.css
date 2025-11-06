@@ -14,25 +14,25 @@ body {
   line-height: 1.6;
 }
 
+/* 상단 */
 header.top {
   text-align: center;
   background: linear-gradient(135deg, var(--main-red), #ff4a5e);
   color: #fff;
   padding: 60px 20px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
 }
 header.top h1 {
   font-size: 46px;
   margin: 0;
   font-weight: 800;
-  letter-spacing: -1px;
 }
 header.top p {
   font-size: 20px;
-  margin: 8px 0 0;
+  margin: 6px 0 0;
   opacity: 0.95;
 }
 
+/* 레이아웃 */
 main.intro-section {
   display: flex;
   flex-wrap: wrap;
@@ -44,23 +44,21 @@ main.intro-section {
   padding: 0 20px;
 }
 
+/* 프로필 */
 .profile-area {
   flex: 1 1 360px;
   background: #fff;
   border-radius: var(--radius);
-  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  box-shadow: 0 3px 10px rgba(0,0,0,.08);
   padding: 30px;
   text-align: center;
-  transition: 0.3s ease;
 }
-.profile-area:hover { transform: translateY(-3px); }
 .profile-photo {
   width: 220px;
   height: 220px;
   object-fit: cover;
   border-radius: 50%;
   border: 4px solid var(--main-red);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 .profile-text h2 {
   color: var(--main-red);
@@ -87,84 +85,41 @@ main.intro-section {
   line-height: 1.5;
 }
 
+/* 영상 */
 .video-area {
   flex: 2 1 520px;
   background: #fff;
   border-radius: var(--radius);
-  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  box-shadow: 0 3px 10px rgba(0,0,0,.08);
   padding: 30px;
-  transition: 0.3s ease;
 }
-.video-area:hover { transform: translateY(-3px); }
 .video-area h2 {
   color: var(--main-red);
   font-size: 22px;
   margin-bottom: 10px;
 }
-
-.video-thumb {
+.video-box {
   position: relative;
   aspect-ratio: 16/9;
-  background: #000;
   border-radius: 14px;
   overflow: hidden;
-  cursor: pointer;
-  user-select: none;
-  box-shadow: 0 4px 14px rgba(0,0,0,.08);
-  margin-bottom: 20px;
+  background: #000;
+  margin-bottom: 12px;
 }
-.video-thumb img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  filter: saturate(0.95) contrast(1.04);
-  transition: transform .2s ease, filter .2s ease;
-}
-.video-thumb:hover img {
-  transform: scale(1.01);
-  filter: saturate(1) contrast(1.06);
-}
-.video-thumb.playing { cursor: default; }
-
-.play-btn {
+.video-box iframe {
   position: absolute;
   inset: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  font-weight: 700;
-  background: linear-gradient(to bottom, rgba(0,0,0,.1), rgba(0,0,0,.35));
-  color: #fff;
+  width: 100%;
+  height: 100%;
   border: none;
-  font-size: 16px;
-  letter-spacing: .02em;
-}
-.play-btn:focus {
-  outline: 3px solid rgba(230,0,45,.6);
-  outline-offset: -3px;
-}
-
-.play-icon {
-  width: 0; height: 0;
-  border-left: 18px solid #fff;
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,.3));
-}
-
-.video-thumb iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%; height: 100%;
-  border: 0;
 }
 .video-desc {
-  margin-top: 10px;
+  margin-top: 5px;
   font-size: 15px;
   color: var(--gray);
-  line-height: 1.6;
 }
 
+/* 비전 */
 section.vision {
   max-width: 1100px;
   margin: 40px auto 60px;
@@ -186,12 +141,10 @@ section.vision {
   flex: 1 1 300px;
   background: #fff;
   border-radius: var(--radius);
-  box-shadow: 0 4px 14px rgba(0,0,0,.05);
+  box-shadow: 0 3px 10px rgba(0,0,0,.05);
   padding: 22px;
   text-align: center;
-  transition: 0.3s ease;
 }
-.card:hover { transform: translateY(-3px); }
 .card h3 {
   color: var(--main-red);
   margin-bottom: 8px;
@@ -202,6 +155,7 @@ section.vision {
   font-size: 15px;
 }
 
+/* 푸터 */
 footer {
   text-align: center;
   color: #999;
@@ -211,6 +165,7 @@ footer {
   border-top: 1px solid #eee;
 }
 
+/* 반응형 */
 @media (max-width: 768px) {
   main.intro-section {
     flex-direction: column;
