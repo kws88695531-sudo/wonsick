@@ -4,68 +4,73 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>공원식 — 포항의 실용 리더</title>
-  <style>
-    :root{
-      --main-red:#E6002D;
-      --dark:#111;
-      --gray:#666;
-      --bg:#fafafa;
-      --radius:16px;
-    }
-    body{
-      margin:0;
-      font-family:'Noto Sans KR', sans-serif;
-      background:var(--bg);
-      color:var(--dark);
-    }
-    header{
-      background:linear-gradient(135deg,var(--main-red),#ff4a5e);
-      color:#fff;
-      text-align:center;
-      padding:60px 20px;
-    }
-    header h1{font-size:40px;margin-bottom:10px;}
-    header p{font-size:18px;margin:0;opacity:.9;}
-    section{
-      max-width:900px;margin:40px auto;background:#fff;
-      border-radius:var(--radius);padding:30px;box-shadow:0 4px 16px rgba(0,0,0,.08);
-    }
-    h2{color:var(--main-red);}
-    ul{list-style:none;padding-left:0;}
-    li{margin:8px 0;padding-left:10px;border-left:4px solid var(--main-red);}
-    footer{
-      text-align:center;color:#aaa;font-size:13px;margin:30px 0;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>공원식 — 포항의 현장을 아는 실용 리더</h1>
-    <p>경북 정무부지사 · 경북관광개발공사 초대 사장 · 포항시의회 의장</p>
+  <header class="top">
+    <h1>공원식</h1>
+    <p>포항의 현장을 아는 실용 리더</p>
   </header>
 
-  <section>
-    <h2>핵심 장점</h2>
-    <ul>
-      <li>포항시의회 3선, 의장 연임으로 지역 현안 구조적 이해</li>
-      <li>경북 정무부지사 경력으로 중앙·도정 협력 창구 확보</li>
-      <li>관광·경제 산업 전반을 아우르는 실무 감각</li>
-      <li>시민단체, 경북자유총연맹 등 폭넓은 네트워크</li>
-    </ul>
-  </section>
+  <main class="intro-section">
+    <div class="profile-area">
+      <img src="https://github.com/kimcy2/park-kws-intro/blob/main/profile.jpg?raw=true" 
+           alt="공원식 프로필" class="profile-photo" />
 
-  <section>
-    <h2>포항을 위한 실용 어젠다</h2>
-    <ul>
-      <li>해양·철강 산업 고도화 및 청년 일자리 연계</li>
-      <li>도심·관광 상권 회복, 축제 중심 도시로</li>
-      <li>지진·태풍 대비 스마트 안전 시스템 강화</li>
-      <li>청년·가족이 정착하는 포항 조성</li>
-    </ul>
+      <div class="profile-text">
+        <h2>프로필</h2>
+        <ul>
+          <li><strong>경상북도 정무부지사</strong> (前)</li>
+          <li><strong>경북관광개발공사 초대 사장</strong> (前)</li>
+          <li><strong>포항시의회 의장 · 3선 시의원</strong></li>
+          <li><strong>한국자유총연맹 경북지부 회장</strong> (現)</li>
+        </ul>
+
+        <p class="slogan">
+          “행정 경험과 지역의 목소리를 함께 담아내는,  
+          실천 중심의 리더십으로 포항의 미래를 준비합니다.”
+        </p>
+      </div>
+    </div>
+
+    <div class="video-area">
+      <h2>핵심 영상</h2>
+      <div class="video-box">
+        <!-- 👉 여기에 본인 유튜브 영상 링크의 ID만 바꾸면 됩니다 -->
+        <iframe 
+          src="https://www.youtube.com/embed/VIDEO_ID" 
+          title="공원식 주요 영상" 
+          frameborder="0" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="video-desc">
+        포항의 비전과 실천 전략을 직접 설명한 인터뷰 영상입니다.<br>
+        지역과 시민이 함께 성장하는 리더십을 보여줍니다.
+      </p>
+    </div>
+  </main>
+
+  <section class="vision">
+    <h2>포항을 위한 비전</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>산업 고도화</h3>
+        <p>철강·해양산업의 스마트화를 통해 지속가능한 일자리를 창출합니다.</p>
+      </div>
+      <div class="card">
+        <h3>도심 재생</h3>
+        <p>문화·관광 자원을 연결하여 체류형 상권을 활성화합니다.</p>
+      </div>
+      <div class="card">
+        <h3>청년 정착</h3>
+        <p>주거·일자리·창업을 한 번에 해결하는 청년지원 인프라를 만듭니다.</p>
+      </div>
+    </div>
   </section>
 
   <footer>
-    © 2025 공원식 소개 페이지 | 국민의힘 톤 템플릿
+    <p>© 2025 공원식 소개 페이지 | 국민의힘 톤 디자인</p>
   </footer>
 </body>
 </html>
