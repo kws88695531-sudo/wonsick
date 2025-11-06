@@ -4,16 +4,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>공원식 — 포항의 사람들 곁에서</title>
+
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ✅ SNS 네이버 아이콘 사이즈 통일 */
+    .naver-icon {
+      width: 60px;
+      height: 60px;
+      background: #00DC00;
+      border-radius: 12px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 38px;
+      color: #FFFFFF;
+
+      user-select: none;
+    }
+  </style>
 </head>
 
 <body>
 
- </header>
+  <!-- 상단 인물 사진 -->
+  <header class="hero">
+    <img src="sicksick.png" alt="공원식 인물 사진" class="hero-img" />
+  </header>
 
   <!-- SNS 링크 섹션 -->
   <section class="sns-section">
     <h2>공식 채널 바로가기</h2>
+
     <div class="sns-links">
 
       <!-- ✅ 유튜브 -->
@@ -22,7 +48,7 @@
         <span>공원식TV</span>
       </a>
 
-      <!-- ✅ 인스타그램 -->
+      <!-- ✅ 인스타 -->
       <a href="https://www.instagram.com/kws5307/" target="_blank" class="sns-item">
         <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="인스타그램 아이콘">
         <span>인스타그램</span>
@@ -34,39 +60,40 @@
         <span>페이스북</span>
       </a>
 
-      <!-- ✅ 네이버 블로그 (네가 만든 N 아이콘) -->
-          <a href="https://blog.naver.com/kws5307" target="_blank" class="sns-item">
-      <div class="naver-icon">N</div>
-      <span>네이버 블로그</span>
-    </a>
+      <!-- ✅ 네이버 블로그(맞춘 사이즈) -->
+      <a href="https://blog.naver.com/kws5307" target="_blank" class="sns-item">
+        <div class="naver-icon">N</div>
+        <span>네이버 블로그</span>
+      </a>
 
     </div>
   </section>
 
+
+
+  <!-- ===========================
+       ✅ 메인 콘텐츠
+       =========================== -->
   <main class="content">
 
     <!-- 왼쪽: 공원식 플래그 -->
     <section class="profile">
       <img src="profile.jpg" alt="공원식 프로필" class="profile-photo" />
-      <h2>4가지 플래그</h2>
+      <h2>공원식의 4가지 플래그</h2>
 
       <div class="flag-box">
 
         <h3>1. 실무로 단련된 추진력</h3>
         <p>경상북도 정무부지사 시절, ‘결정은 빠르게 실행은 철저하게’ 원칙으로 현장 중심 행정을 이끌었습니다.</p>
-        <br></br>
 
         <h3>2. 포항 산업의 맥을 읽는 통찰</h3>
         <p>철강·해양·관광 산업 구조를 깊이 이해하며 지역 성장의 연결점을 찾아낸 실무형 전문가입니다.</p>
-        <br></br>
 
         <h3>3. 시민의 목소리를 듣는 현장감</h3>
         <p>수많은 민원과 갈등 현장을 직접 찾아가 해결하며 말보다 행동으로 신뢰를 쌓았습니다.</p>
-        <br></br>
 
         <h3>4. 진정성 있는 소통</h3>
         <p>보고보다 참여, 회의보다 대화를 중시하는 리더십으로 함께 웃는 행정을 만들어왔습니다.</p>
-        <br></br>
 
       </div>
     </section>
@@ -74,29 +101,31 @@
     <!-- 오른쪽: 영상 -->
     <section class="videos">
 
+      <!-- ✅ 1번째 영상 -->
       <div class="video-item">
-        <h2>걸어온 흔적</h2>
+        <h2>공원식의 발자취</h2>
         <iframe 
           src="https://www.youtube.com/embed/Qf8Fokw11YQ"
           title="공원식의 발자취"
           frameborder="0"
           allowfullscreen></iframe>
         <p class="video-desc">
-          세월이 담긴 짧은 순간들.<br>
-          공원식의 나이와 시간이 지나온 여정을 숏츠로 만나보세요.
+          흘러가는 시간 속에서 쌓인 공원식의 이야기들.<br>
+          짧지만 깊은, 세월의 흔적을 담은 순간들을 함께 느껴보세요.
         </p>
       </div>
 
+      <!-- ✅ 2번째 영상 -->
       <div class="video-item">
-        <h2>걸어온 방향성</h2>
+        <h2>세월 영상</h2>
         <iframe 
           src="https://www.youtube.com/embed/_CjKtxwPCUA"
           title="공원식 업적 영상"
           frameborder="0"
           allowfullscreen></iframe>
         <p class="video-desc">
-          시민과 함께 만들어온 포항의 변화.<br>
-          그 중심에는 언제나 ‘공원식’이 있었습니다.
+          변화의 순간마다 시민과 함께 걸어온 길.<br>
+          그 길의 한가운데에는 늘, 공원식이 함께했습니다.
         </p>
       </div>
 
@@ -104,6 +133,9 @@
 
   </main>
 
+
+
+  <!-- FOOTER -->
   <footer>
     <p>© 2025 공원식 소개 페이지 | 포항의 실용 리더</p>
   </footer>
