@@ -41,16 +41,27 @@ body {
   gap: 10px;
 }
 
-.sns-item img {
+/* ✅ 모든 아이콘의 크기를 정확히 통일시키는 BOX */
+.icon-box {
   width: 60px;
   height: 60px;
-  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* ✅ 네이버 아이콘 (네가 만든 디자인) */
+/* ✅ 이미지 아이콘 공통 규격 */
+.icon-box img {
+  width: 60px;
+  height: 60px;
+}
+
+/* ✅ 네이버 아이콘 (너가 만든 디자인) */
 .naver-icon {
   width: 48px;
   height: 48px;
+
   background: #00DC00;
   border-radius: 10px;
 
@@ -58,14 +69,12 @@ body {
   align-items: center;
   justify-content: center;
 
-  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 30px;
   color: #FFFFFF;
 
   user-select: none;
 }
-
 
 
 /* ============================
@@ -82,11 +91,6 @@ body {
 /* ✅ 왼쪽 프로필 */
 .profile {
   max-width: 400px;
-}
-
-.profile-photo {
-  width: 100%;
-  border-radius: 12px;
 }
 
 .flag-box {
