@@ -1,16 +1,14 @@
-/* 공통 스타일 */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
 }
 
-/* 상단 사진 */
 .hero-img {
   width: 100%;
   display: block;
 }
 
-/* SNS 섹션 */
+/* SNS */
 .sns-section {
   text-align: center;
   padding: 40px 0;
@@ -37,19 +35,33 @@ body {
   height: 60px;
 }
 
-/* ✅ 네이버 아이콘 (네가 만든 스타일 적용) */
+/* ✅ 네이버 아이콘 */
 .naver-icon {
   width: 87px;
   height: 87px;
   background: #00DC00;
   border-radius: 20px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-weight: 700;
   font-size: 60px;
-  color: #FFFFFF;
+  color: #fff;
   user-select: none;
+}
+
+/* 프로필 & 영상 */
+.profile, .videos {
+  padding: 40px;
+}
+
+.profile-photo {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.video-item iframe {
+  width: 100%;
+  height: 315px;
+  border-radius: 12px;
 }
