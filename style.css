@@ -49,10 +49,10 @@ body {
 
 /* ✅ 네이버 아이콘 (네가 만든 디자인) */
 .naver-icon {
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
   background: #00DC00;
-  border-radius: 12px;
+  border-radius: 10px;
 
   display: flex;
   align-items: center;
@@ -60,11 +60,12 @@ body {
 
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 38px;
+  font-size: 30px;
   color: #FFFFFF;
 
   user-select: none;
 }
+
 
 
 /* ============================
