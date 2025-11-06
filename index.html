@@ -13,10 +13,10 @@
   </header>
 
   <main class="intro-section">
-    <!-- 🔹 왼쪽 프로필 -->
+    <!-- 왼쪽: 프로필 -->
     <div class="profile-area">
       <img 
-        src="profile.jpg"  <!-- 여기에 본인 사진 파일명/경로 -->
+        src="profile.jpg"
         alt="공원식 프로필"
         class="profile-photo"
       />
@@ -35,27 +35,24 @@
       </div>
     </div>
 
-    <!-- 🔹 오른쪽 영상(썸네일 → 클릭 시 재생) -->
+    <!-- 오른쪽: 영상 섹션 -->
     <div class="video-area">
       <h2>공원식의 발자취</h2>
-      <!-- 1) Shorts 영상: Qf8Fokw11YQ -->
       <div class="video-thumb" data-video-id="Qf8Fokw11YQ" aria-label="공원식의 발자취 재생">
-        <!-- 유튜브 썸네일 자동 URL -->
         <img src="https://img.youtube.com/vi/Qf8Fokw11YQ/hqdefault.jpg" alt="공원식의 발자취 썸네일" />
         <button class="play-btn" aria-label="재생">
           <span class="play-icon" aria-hidden="true"></span>
           재생
         </button>
         <noscript>
-          <a class="noscript-link" href="https://www.youtube.com/shorts/Qf8Fokw11YQ" target="_blank" rel="noopener">영상 보러가기</a>
+          <a class="noscript-link" href="https://youtube.com/shorts/Qf8Fokw11YQ" target="_blank" rel="noopener">영상 보러가기</a>
         </noscript>
       </div>
       <p class="video-desc">
-        포항에서 시작된 헌신과 리더십의 여정을 1분에 담았습니다.
+        포항에서 시작된 헌신과 리더십의 여정을 담은 영상입니다.
       </p>
 
       <h2 style="margin-top:28px;">비전 인터뷰</h2>
-      <!-- 2) 인터뷰 영상: _CjKtxwPCUA -->
       <div class="video-thumb" data-video-id="_CjKtxwPCUA" aria-label="비전 인터뷰 재생">
         <img src="https://img.youtube.com/vi/_CjKtxwPCUA/hqdefault.jpg" alt="비전 인터뷰 썸네일" />
         <button class="play-btn" aria-label="재생">
@@ -63,11 +60,11 @@
           재생
         </button>
         <noscript>
-          <a class="noscript-link" href="https://www.youtube.com/watch?v=_CjKtxwPCUA" target="_blank" rel="noopener">영상 보러가기</a>
+          <a class="noscript-link" href="https://youtu.be/_CjKtxwPCUA" target="_blank" rel="noopener">영상 보러가기</a>
         </noscript>
       </div>
       <p class="video-desc">
-        포항의 미래를 위한 실용 비전과 정책 방향을 설명하는 인터뷰입니다.
+        포항의 미래를 위한 비전과 정책 방향을 설명하는 인터뷰 영상입니다.
       </p>
     </div>
   </main>
@@ -94,7 +91,6 @@
     <p>© 2025 공원식 소개 페이지 | 국민의힘 톤 디자인</p>
   </footer>
 
-  <!-- ▶ 썸네일을 클릭하면 IFRAME으로 교체하는 간단 스크립트 -->
   <script>
     document.querySelectorAll('.video-thumb').forEach(box => {
       box.addEventListener('click', () => {
@@ -107,15 +103,12 @@
           'src',
           `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&rel=0`
         );
-        // 접근성: 키보드로도 재생 가능
         iframe.setAttribute('tabindex', '0');
 
         box.classList.add('playing');
         box.innerHTML = '';
         box.appendChild(iframe);
       });
-
-      // 키보드 접근성(Enter/Space)
       box.setAttribute('tabindex', '0');
       box.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
