@@ -60,27 +60,29 @@ body {
   margin-bottom: 35px;
 }
 
-/* ✅ PC — 시원한 간격 */
+/* ✅ PC — 넓고 시원한 간격 유지 */
 .sns-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  column-gap: 50px;   /* ✅ PC 좌우 넉넉 */
-  row-gap: 40px;      /* ✅ PC 위아래 적당 */
+  column-gap: 55px;    /* ✅ 확실히 넓고 시원한 좌우 간격 */
+  row-gap: 45px;       /* ✅ 위아래도 여유있음 */
 }
 
+/* ✅ SNS 아이템 기본 */
 .sns-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-decoration: none;
   color: #000;
-  gap: 12px;
+  gap: 14px;
 }
 
+/* ✅ 아이콘 크기 */
 .icon-box {
-  width: 70px;
-  height: 70px;
+  width: 72px;
+  height: 72px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,23 +93,21 @@ body {
   height: 100%;
 }
 
-/* ✅ 네이버 아이콘 공통 적용 */
+/* ✅ 네이버 아이콘 (PC + 모바일 동일) */
 .naver-icon {
-  width: 70px !important;
-  height: 70px !important;
+  width: 72px !important;
+  height: 72px !important;
   background: #00DC00 !important;
   border-radius: 14px !important;
-
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-
-  font-weight: 700 !important;
+  font-weight: 700;
   font-size: 40px !important;
-  color: #fff !important;
+  color: white !important;
 }
 
-/* ✅ 네이버 이미지 불러오면 차단 */
+/* ✅ naver png 강제 차단 */
 .icon-box img[src*="naver"] {
   display: none !important;
 }
@@ -167,7 +167,7 @@ body {
   color: #333;
 }
 
-/* ✅ 숏츠 9:16 비율 */
+/* ✅ 숏츠 9:16 정비율 */
 .videos {
   max-width: 360px;
   width: 100%;
@@ -201,17 +201,18 @@ footer {
 ------------------------------------------------------ */
 @media (max-width: 768px) {
 
-  /* ✅ 아이콘 두 줄 정렬 + 간격 최적화 */
+  /* ✅ 모바일 양옆 간격 — 좁지도 넓지도 않게 ‘딱 보기 좋은 값’ */
   .sns-links {
-    column-gap: 25px;   /* 좌우 적당한 간격 */
-    row-gap: 28px;      /* 위아래 넉넉 */
-    padding: 0 10px;
+    column-gap: 35px;    /* ✅ 좌우 적당히 여유 */
+    row-gap: 32px;       /* ✅ 위아래 깔끔한 간격 */
+    padding: 0 15px;     /* ✅ 전체 좌우 패딩 */
   }
 
+  /* ✅ 모바일 아이콘 크기 살짝 축소 */
   .icon-box,
   .naver-icon {
-    width: 65px !important;
-    height: 65px !important;
+    width: 68px !important;
+    height: 68px !important;
     font-size: 38px !important;
   }
 
