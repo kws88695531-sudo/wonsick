@@ -56,13 +56,13 @@ body {
   text-align: center;
 }
 
-.sns-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 14px; /* ✅ 좌우/상하 동일하게 딱 맞는 간격 */
-}
-
+  .sns-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;   
+    column-gap: 12px;   /* ✅ 좌우 간격 — 너무 붙지도 멀지도 않게 */
+    row-gap: 22px;      /* ✅ 위아래 간격 — 시원하고 안정감 있는 값 */
+  }
 .sns-item {
   display: flex;
   flex-direction: column;
