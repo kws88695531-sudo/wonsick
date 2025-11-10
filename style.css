@@ -58,9 +58,9 @@ body {
 
 .sns-links {
   display: flex;
-  justify-content: center;
-  gap: 40px;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px; /* ✅ 좌우/상하 동일하게 딱 맞는 간격 */
 }
 
 .sns-item {
