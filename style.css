@@ -204,7 +204,7 @@ footer {
   .sns-links {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px 10px;
+    gap: 20px; /* ✅ 위/아래/좌/우 전부 동일 간격 */
     justify-items: center;
   }
 
