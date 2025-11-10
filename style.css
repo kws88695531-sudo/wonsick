@@ -1,8 +1,4 @@
-/* ======================================
-   ✅ 공원식 페이지 전체 스타일 완성본
-   ====================================== */
-
-/* ✅ 기본 */
+/* ✅ 기본 스타일 */
 body {
   margin: 0;
   padding: 0;
@@ -12,38 +8,19 @@ body {
   line-height: 1.6;
 }
 
-/* ======================================
-   ✅ 1. HERO 인물사진 자동 슬라이드
-   ====================================== */
-
-.hero-slider {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-}
-
-.slide-track {
-  display: flex;
-  width: calc(100% * 6);   /* 이미지 6장 기준 */
-  animation: heroScroll 20s linear infinite;
-}
-
-.slide-img {
+/* ✅ HERO 슬라이더 */
+.heroSwiper {
   width: 100%;
   height: 430px;
+}
+
+.heroSwiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
-@keyframes heroScroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-
-/* ======================================
-   ✅ 2. 출판기념회 영상
-   ====================================== */
-
+/* ✅ 출판기념회 영상 */
 .main-video-section {
   text-align: center;
   padding: 40px 20px;
@@ -51,7 +28,7 @@ body {
 
 .main-video-section h2 {
   font-size: 28px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   font-weight: 700;
 }
 
@@ -63,11 +40,7 @@ body {
   border: none;
 }
 
-
-/* ======================================
-   ✅ 3. 플래그 + 발자취 (2단)
-   ====================================== */
-
+/* ✅ 플래그 + 발자취 2단 구조 */
 .content {
   display: flex;
   justify-content: center;
@@ -76,14 +49,8 @@ body {
   flex-wrap: wrap;
 }
 
-/* ✅ 왼쪽 플래그 */
 .profile {
   max-width: 500px;
-}
-
-.profile h2 {
-  font-size: 26px;
-  margin-bottom: 20px;
 }
 
 .flag-box {
@@ -94,47 +61,25 @@ body {
 
 .flag-box h3 {
   font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
-.flag-box p {
-  color: #333;
-  margin: 0;
-}
-
-/* ✅ 오른쪽 발자취 숏츠 영상 */
 .videos {
   max-width: 400px;
 }
 
-.videos h2 {
-  font-size: 26px;
-  margin-bottom: 20px;
-}
-
 .videos iframe {
   width: 100%;
-  height: 500px;              /* ✅ 숏츠 크게 보이도록 */
+  height: 500px;
   border-radius: 12px;
   border: none;
   object-fit: cover;
 }
 
-
-/* ======================================
-   ✅ 4. SNS 아이콘 (푸터 위)
-   ====================================== */
-
+/* ✅ SNS 아이콘 */
 .sns-section {
   text-align: center;
   padding: 50px 20px 30px;
-}
-
-.sns-section h2 {
-  font-size: 28px;
-  margin-bottom: 25px;
-  font-weight: 700;
 }
 
 .sns-links {
@@ -144,72 +89,43 @@ body {
   gap: 40px;
 }
 
-.sns-item {
-  text-decoration: none;
-  color: black;
-  text-align: center;
-}
-
 .icon-box img {
   width: 60px;
   height: 60px;
 }
 
-/* ✅ 네이버 박스 */
 .naver-icon {
   width: 60px;
   height: 60px;
   background: #00c73c;
   color: white;
-  font-size: 38px;
+  font-size: 37px;
   border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
-/* ======================================
-   ✅ 5. FOOTER
-   ====================================== */
-
+/* ✅ Footer */
 footer {
   text-align: center;
   padding: 25px 0;
-  font-size: 14px;
   background: #fafafa;
-  color: #666;
   margin-top: 40px;
+  color: #555;
 }
 
-
-/* ======================================
-   ✅ 6. 모바일 반응형
-   ====================================== */
-
+/* ✅ 모바일 */
 @media (max-width: 768px) {
-
-  /* 인물 슬라이드 */
-  .slide-img {
+  .heroSwiper {
     height: 300px;
   }
 
-  /* 출판 영상 */
   .main-video-section iframe {
     height: 260px;
   }
 
-  /* 플래그/발자취 */
-  .content {
-    padding: 20px;
-  }
-
   .videos iframe {
     height: 380px;
-  }
-
-  /* SNS */
-  .sns-links {
-    gap: 25px;
   }
 }
