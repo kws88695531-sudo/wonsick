@@ -8,7 +8,7 @@ body {
 }
 
 /* ============================
-   ✅ HERO
+   ✅ 1. HERO
    ============================ */
 .hero-img {
   width: 100%;
@@ -18,7 +18,7 @@ body {
 }
 
 /* ============================
-   ✅ SNS
+   ✅ 2. SNS
    ============================ */
 .sns-section {
   text-align: center;
@@ -54,23 +54,23 @@ body {
   height: 60px;
 }
 
-/* ✅ 네이버 아이콘 */
+/* ✅ 네이버 아이콘 (PC + 모바일 동일 스타일) */
 .naver-icon {
-  width: 48px;
-  height: 48px;
+  width: 60px;
+  height: 60px;
   background: #00DC00;
-  border-radius: 10px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 36px;
   color: #FFFFFF;
   user-select: none;
 }
 
 /* ============================
-   ✅ MAIN CONTENT
+   ✅ 3. MAIN CONTENT
    ============================ */
 .content {
   display: flex;
@@ -80,7 +80,7 @@ body {
   flex-wrap: wrap;
 }
 
-/* ✅ 왼쪽 플래그 */
+/* ✅ 플래그 */
 .profile {
   max-width: 400px;
 }
@@ -97,7 +97,7 @@ body {
   color: #333;
 }
 
-/* ✅ 오른쪽 영상 */
+/* ✅ 영상 */
 .videos {
   max-width: 550px;
 }
@@ -119,7 +119,7 @@ body {
 }
 
 /* ============================
-   ✅ FOOTER
+   ✅ 4. FOOTER
    ============================ */
 footer {
   text-align: center;
@@ -130,11 +130,11 @@ footer {
 }
 
 /* ============================
-   ✅ ✅ ✅ 모바일 원본 버전 (복구)
+   ✅ ✅ ✅ 5. MOBILE — 원본 복구 + 네이버 아이콘 PC 동일
    ============================ */
 @media (max-width: 768px) {
 
-  /* ✅ SNS 원래 2열 */
+  /* ✅ SNS 2열 */
   .sns-links {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -142,10 +142,12 @@ footer {
     justify-items: center;
   }
 
+  /* ✅ 모바일에서도 PC 네이버 아이콘 크기 그대로 유지 */
   .icon-box img,
   .naver-icon {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
+    font-size: 36px;   /* PC와 동일 */
   }
 
   /* ✅ 메인 콘텐츠 세로 정렬 */
@@ -155,21 +157,16 @@ footer {
     align-items: center;
   }
 
-  /* ✅ 영상 크기 조정 */
+  /* ✅ 영상 축소 */
   .video-item iframe {
     height: 220px;
   }
 
-  /* ✅ 플래그 박스 간격 줄임 */
   .flag-box {
     padding: 18px;
   }
 
-  .flag-box h3 {
-    font-size: 17px;
-  }
-
   .video-desc {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
