@@ -1,6 +1,4 @@
-/* ------------------------------------------------------
-   ✅ RESET
------------------------------------------------------- */
+/* RESET */
 body {
   margin: 0;
   padding: 0;
@@ -9,22 +7,16 @@ body {
   color: #000;
 }
 
-/* ------------------------------------------------------
-   ✅ HERO IMAGE
------------------------------------------------------- */
+/* HERO */
 .hero-img {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
 }
 
-/* ------------------------------------------------------
-   ✅ 오른쪽 하단 "맨 아래로" 버튼
------------------------------------------------------- */
-.go-bottom {
+/* ✅ 맨 아래로 이동 버튼 */
+.go-bottom, .go-top {
   position: fixed;
-  bottom: 25px;
   right: 25px;
   width: 55px;
   height: 55px;
@@ -42,14 +34,15 @@ body {
   transition: 0.2s ease;
 }
 
-.go-bottom:hover {
+.go-bottom { bottom: 25px; }
+.go-top { bottom: 90px; } /* ✅ 위 버튼은 위쪽에 배치 */
+
+.go-bottom:hover, .go-top:hover {
   background: #000000ee;
   transform: translateY(-3px);
 }
 
-/* ------------------------------------------------------
-   ✅ SNS SECTION
------------------------------------------------------- */
+/* SNS SECTION */
 .sns-section {
   text-align: center;
   padding: 40px 0;
@@ -60,84 +53,69 @@ body {
   margin-bottom: 35px;
 }
 
-/* ✅ PC — 넓고 시원한 간격 유지 */
-.sns-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  column-gap: 55px;    /* ✅ 확실히 넓고 시원한 좌우 간격 */
-  row-gap: 45px;       /* ✅ 위아래도 여유있음 */
+/* ✅ PC 전용 SNS 레이아웃 */
+@media (min-width: 769px) {
+  .sns-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 70px; /* ✅ 시원한 간격 */
+    row-gap: 50px;
+  }
+
+  .icon-box {
+    width: 75px;
+    height: 75px;
+  }
+
+  .naver-icon {
+    width: 75px !important;
+    height: 75px !important;
+    font-size: 42px !important;
+  }
 }
 
-/* ✅ SNS 아이템 기본 */
-.sns-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: #000;
-  gap: 14px;
-}
-
-/* ✅ 아이콘 크기 */
-.icon-box {
-  width: 72px;
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.icon-box img {
-  width: 100%;
-  height: 100%;
-}
-
-/* ✅ 네이버 아이콘 (PC + 모바일 동일) */
+/* SNS 공통 */
+.sns-item { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.icon-box img { width: 100%; height: 100%; }
 .naver-icon {
-  width: 72px !important;
-  height: 72px !important;
-  background: #00DC00 !important;
-  border-radius: 14px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+  background: #00DC00;
+  color: #fff;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 700;
-  font-size: 40px !important;
-  color: white !important;
+}
+.icon-box img[src*="naver"] { display: none !important; }
+
+/* ✅ 모바일 SNS 전용 */
+@media (max-width: 768px) {
+
+  .sns-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 35px;  /* ✅ 너무 벌어지지 않고 딱 보기 좋은 간격 */
+    row-gap: 32px;
+    padding: 0 15px;
+  }
+
+  .icon-box, .naver-icon {
+    width: 68px !important;
+    height: 68px !important;
+    font-size: 38px !important;
+  }
 }
 
-/* ✅ naver png 강제 차단 */
-.icon-box img[src*="naver"] {
-  display: none !important;
-}
-
-/* ------------------------------------------------------
-   ✅ 출판기념회 영상 (가로형)
------------------------------------------------------- */
-.main-video-section {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.main-video-section h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
+/* 출판기념회 영상 */
+.main-video-section { text-align: center; padding: 40px 20px; }
 .main-video-section iframe {
-  width: 90%;
-  max-width: 900px;
-  height: 480px;
-  border: none;
-  border-radius: 12px;
-  display: block;
-  margin: 0 auto;
+  width: 90%; max-width: 900px; height: 480px;
+  border-radius: 12px; border: none;
 }
 
-/* ------------------------------------------------------
-   ✅ CONTENT (플래그 + 숏츠 2단)
------------------------------------------------------- */
+/* CONTENT */
 .content {
   display: flex;
   justify-content: center;
@@ -146,83 +124,18 @@ body {
   flex-wrap: wrap;
 }
 
-/* ✅ 플래그 박스 */
-.profile {
-  max-width: 420px;
-}
+/* 플래그 */
+.profile { max-width: 420px; }
+.profile h2 { text-align: center; }
+.flag-box { background: #f7f7f7; padding: 22px; border-radius: 12px; margin-top: 20px; }
 
-.profile h2 {
-  text-align: center;
-}
-
-.flag-box {
-  background: #f7f7f7;
-  padding: 22px;
-  border-radius: 12px;
-  margin-top: 20px;
-}
-
-.flag-box h3 {
-  margin-bottom: 6px;
-  color: #333;
-}
-
-/* ✅ 숏츠 9:16 정비율 */
-.videos {
-  max-width: 360px;
-  width: 100%;
-}
-
-.videos h2 {
-  text-align: center;
-}
-
+/* 숏츠 영상 */
+.videos { max-width: 360px; width: 100%; }
 .videos iframe {
-  width: 100%;
-  aspect-ratio: 9 / 16;
-  border-radius: 12px;
-  border: none;
+  width: 100%; aspect-ratio: 9 / 16;
+  border-radius: 12px; border: none;
   object-fit: cover;
 }
 
-/* ------------------------------------------------------
-   ✅ FOOTER
------------------------------------------------------- */
-footer {
-  text-align: center;
-  padding: 30px 0;
-  font-size: 14px;
-  color: #555;
-  margin-top: 50px;
-}
-
-/* ------------------------------------------------------
-   ✅ MOBILE (max-width:768px)
------------------------------------------------------- */
-@media (max-width: 768px) {
-
-  /* ✅ 모바일 양옆 간격 — 좁지도 넓지도 않게 ‘딱 보기 좋은 값’ */
-  .sns-links {
-    column-gap: 35px;    /* ✅ 좌우 적당히 여유 */
-    row-gap: 32px;       /* ✅ 위아래 깔끔한 간격 */
-    padding: 0 15px;     /* ✅ 전체 좌우 패딩 */
-  }
-
-  /* ✅ 모바일 아이콘 크기 살짝 축소 */
-  .icon-box,
-  .naver-icon {
-    width: 68px !important;
-    height: 68px !important;
-    font-size: 38px !important;
-  }
-
-  .main-video-section iframe {
-    height: 260px;
-  }
-
-  .content {
-    flex-direction: column;
-    padding: 20px;
-    align-items: center;
-  }
-}
+/* FOOTER */
+footer { text-align: center; padding: 30px 0; font-size: 14px; color: #555; margin-top: 50px; }
