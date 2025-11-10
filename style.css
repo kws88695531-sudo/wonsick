@@ -1,170 +1,215 @@
-/* 전체 기본 설정 */
+/* ======================================
+   ✅ 공원식 페이지 전체 스타일 완성본
+   ====================================== */
+
+/* ✅ 기본 */
 body {
   margin: 0;
+  padding: 0;
   font-family: "Noto Sans KR", sans-serif;
   background: #ffffff;
+  color: #111;
   line-height: 1.6;
-  color: #222;
 }
 
-/* ✅ 상단 인물 사진 */
-.hero {
+/* ======================================
+   ✅ 1. HERO 인물사진 자동 슬라이드
+   ====================================== */
+
+.hero-slider {
   width: 100%;
   overflow: hidden;
+  position: relative;
 }
 
-.hero-img {
+.slide-track {
+  display: flex;
+  width: calc(100% * 6);   /* 이미지 6장 기준 */
+  animation: heroScroll 20s linear infinite;
+}
+
+.slide-img {
   width: 100%;
-  display: block;
+  height: 430px;
+  object-fit: cover;
 }
 
-/* ✅ SNS 섹션 */
+@keyframes heroScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+/* ======================================
+   ✅ 2. 출판기념회 영상
+   ====================================== */
+
+.main-video-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.main-video-section h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.main-video-section iframe {
+  width: 90%;
+  max-width: 900px;
+  height: 480px;
+  border-radius: 12px;
+  border: none;
+}
+
+
+/* ======================================
+   ✅ 3. 플래그 + 발자취 (2단)
+   ====================================== */
+
+.content {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+/* ✅ 왼쪽 플래그 */
+.profile {
+  max-width: 500px;
+}
+
+.profile h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.flag-box {
+  background: #f8f8f8;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.flag-box h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.flag-box p {
+  color: #333;
+  margin: 0;
+}
+
+/* ✅ 오른쪽 발자취 숏츠 영상 */
+.videos {
+  max-width: 400px;
+}
+
+.videos h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.videos iframe {
+  width: 100%;
+  height: 500px;              /* ✅ 숏츠 크게 보이도록 */
+  border-radius: 12px;
+  border: none;
+  object-fit: cover;
+}
+
+
+/* ======================================
+   ✅ 4. SNS 아이콘 (푸터 위)
+   ====================================== */
+
 .sns-section {
   text-align: center;
-  padding: 40px 0 10px;
+  padding: 50px 20px 30px;
 }
 
 .sns-section h2 {
   font-size: 28px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   font-weight: 700;
 }
 
 .sns-links {
   display: flex;
   justify-content: center;
-  gap: 40px;
   flex-wrap: wrap;
+  gap: 40px;
 }
 
 .sns-item {
   text-decoration: none;
+  color: black;
   text-align: center;
-  color: #000;
-  font-size: 16px;
-  font-weight: 600;
 }
 
-.icon-box img,
-.naver-icon {
+.icon-box img {
   width: 60px;
   height: 60px;
 }
 
+/* ✅ 네이버 박스 */
 .naver-icon {
-  background: #00c300;
+  width: 60px;
+  height: 60px;
+  background: #00c73c;
   color: white;
-  font-weight: 900;
-  border-radius: 15px;
-  font-size: 40px;
+  font-size: 38px;
+  border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* ✅ 출판기념회 영상 */
-.main-video-section {
-  text-align: center;
-  padding: 40px 0 20px;
-}
 
-.main-video-section h2 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 25px;
-}
+/* ======================================
+   ✅ 5. FOOTER
+   ====================================== */
 
-.main-video-section iframe {
-  width: 100%;
-  max-width: 850px;
-  height: 480px;
-  border-radius: 12px;
-  border: none;
-}
-
-/* ✅ 플래그 + 발자취 (2단 구조) */
-.content {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  padding: 40px;
-  flex-wrap: wrap;
-}
-
-/* ✅ 왼쪽 플래그 박스 */
-.profile {
-  max-width: 600px;
-}
-
-.profile h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-.flag-box {
-  background: #f6f6f6;
-  padding: 25px 30px;
-  border-radius: 15px;
-}
-
-/* ✅ 오른쪽 숏츠 영상 박스 */
-.videos {
-  max-width: 450px;
-}
-
-.videos h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-/* ✅ 숏츠(세로 영상) 크게 보이도록 */
-.videos iframe {
-  width: 100%;
-  height: 600px;         /* ✅ 세로 숏츠 크게 */
-  max-width: 430px;
-  border-radius: 15px;
-  border: none;
-  object-fit: cover;      /* ✅ 빈 여백 없이 꽉 채움 */
-}
-
-/* ✅ 하단 푸터 */
 footer {
-  margin-top: 60px;
   text-align: center;
-  padding: 20px;
-  background: #fafafa;
+  padding: 25px 0;
   font-size: 14px;
-  color: #555;
+  background: #fafafa;
+  color: #666;
+  margin-top: 40px;
 }
 
-/* ✅ 모바일 대응 */
+
+/* ======================================
+   ✅ 6. 모바일 반응형
+   ====================================== */
+
 @media (max-width: 768px) {
-  
-  .sns-links {
-    gap: 20px;
+
+  /* 인물 슬라이드 */
+  .slide-img {
+    height: 300px;
   }
 
+  /* 출판 영상 */
   .main-video-section iframe {
-    height: 250px;
+    height: 260px;
+  }
+
+  /* 플래그/발자취 */
+  .content {
+    padding: 20px;
   }
 
   .videos iframe {
-    height: 420px;   /* ✅ 모바일 숏츠 최적 크기 */
-    max-width: 95%;
+    height: 380px;
   }
 
-  .content {
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .profile,
-  .videos {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .flag-box {
-    padding: 20px;
+  /* SNS */
+  .sns-links {
+    gap: 25px;
   }
 }
