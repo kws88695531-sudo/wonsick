@@ -5,25 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>공원식 — 포항의 사람들 곁에서</title>
 
+  <!-- ✅ 스타일 연결 -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- ✅ Swiper 슬라이더 CSS (필수) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
 
-  <!-- ✅ ✅ ✅ 1. 상단 인물 사진 자동 슬라이드 배너 -->
+  <!-- ✅ ✅ ✅ 1. 상단 인물 사진 "1장씩 넘어가는 슬라이드" -->
   <header class="hero">
-    <div class="hero-slider">
-      <div class="slide-track">
+    <div class="swiper heroSwiper">
+      <div class="swiper-wrapper">
 
-        <!-- ✅ 슬라이드 이미지 (여기에 원하는 만큼 넣을 수 있음) -->
-        <img src="sicksick.png" class="slide-img" />
-        <img src="sicksick2.png" class="slide-img" />
-        <img src="sicksick3.png" class="slide-img" />
+        <div class="swiper-slide">
+          <img src="sicksick.png" class="hero-img" />
+        </div>
 
-        <!-- ✅ 무한 반복용 복제 -->
-        <img src="sicksick.png" class="slide-img" />
-        <img src="sicksick2.png" class="slide-img" />
-        <img src="sicksick3.png" class="slide-img" />
+        <div class="swiper-slide">
+          <img src="sicksick2.png" class="hero-img" />
+        </div>
+
+        <div class="swiper-slide">
+          <img src="sicksick3.png" class="hero-img" />
+        </div>
 
       </div>
     </div>
@@ -35,7 +41,7 @@
     <iframe src="https://www.youtube.com/embed/_CjKtxwPCUA" allowfullscreen></iframe>
   </section>
 
-  <!-- ✅ 3. 플래그 + 발자취 -->
+  <!-- ✅ 3. 플래그 + 발자취 2단 -->
   <main class="content">
 
     <section class="profile">
@@ -67,36 +73,28 @@
 
   </main>
 
-  <!-- ✅ 4. SNS 아이콘 (위치 그대로 유지) -->
+  <!-- ✅ 4. SNS 아이콘 -->
   <section class="sns-section">
     <h2>공식 채널 바로가기</h2>
 
     <div class="sns-links">
       <a href="https://www.youtube.com/@%EA%B3%B5%EC%9B%90%EC%8B%9DTV" class="sns-item">
-        <div class="icon-box">
-          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">
-        </div>
+        <div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"></div>
         <span>공원식TV</span>
       </a>
 
       <a href="https://www.instagram.com/kws5307/" class="sns-item">
-        <div class="icon-box">
-          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png">
-        </div>
+        <div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"></div>
         <span>인스타그램</span>
       </a>
 
       <a href="https://www.facebook.com/kws5307" class="sns-item">
-        <div class="icon-box">
-          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384053.png">
-        </div>
+        <div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384053.png"></div>
         <span>페이스북</span>
       </a>
 
       <a href="https://blog.naver.com/kws5307" class="sns-item">
-        <div class="icon-box">
-          <div class="naver-icon">N</div>
-        </div>
+        <div class="icon-box"><div class="naver-icon">N</div></div>
         <span>네이버 블로그</span>
       </a>
     </div>
@@ -105,6 +103,21 @@
   <footer>
     <p>© 2025 공원식 소개 페이지 | 포항의 실용 리더</p>
   </footer>
+
+  <!-- ✅ Swiper JS (필수) -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- ✅ 자동 슬라이드 + 멈춤 + 1장씩 이동 -->
+  <script>
+    var swiper = new Swiper(".heroSwiper", {
+      loop: true,
+      autoplay: {
+        delay: 2500,    // ✅ 2.5초 멈춤
+        disableOnInteraction: false,
+      },
+      speed: 800        // ✅ 부드럽게 넘어가는 속도
+    });
+  </script>
 
 </body>
 </html>
