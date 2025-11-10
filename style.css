@@ -35,7 +35,34 @@ body {
   z-index: 999;
   transition: 0.2s ease;
 }
+
 .go-bottom:hover {
+  background: #000000ee;
+  transform: translateY(-3px);
+}
+
+/* ✅ 맨 위로 이동 버튼 */
+.go-top {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  width: 55px;
+  height: 55px;
+  background: #000000cc;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+  z-index: 999;
+  transition: 0.2s ease;
+}
+
+.go-top:hover {
   background: #000000ee;
   transform: translateY(-3px);
 }
@@ -52,20 +79,22 @@ body {
   margin-bottom: 30px;
 }
 
-/* ✅ SNS 밑줄 제거 */
+/* ✅ SNS PC 버전 — 2개씩 나열 */
+.sns-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);   /* ✅ 2개씩 나열 */
+  justify-items: center;
+  row-gap: 35px;
+  column-gap: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ✅ SNS 아이콘 + 밑줄 제거 */
 .sns-item,
 .sns-item span {
   text-decoration: none !important;
-  color: #000 !important;
-}
-
-/* ✅ SNS PC 버전 간격 */
-.sns-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  column-gap: 40px;
-  row-gap: 35px;
+  color: #000;
 }
 
 .sns-item {
@@ -75,6 +104,7 @@ body {
   gap: 10px;
 }
 
+/* 아이콘 박스 */
 .icon-box {
   width: 60px;
   height: 60px;
@@ -108,11 +138,12 @@ body {
   display: none !important;
 }
 
-/* ✅ 모바일 SNS */
+/* ✅ 모바일 버전 (정상 2개씩 유지) */
 @media (max-width: 768px) {
   .sns-links {
-    column-gap: 25px;
+    grid-template-columns: repeat(2, 1fr);
     row-gap: 25px;
+    column-gap: 25px;
   }
 
   .icon-box,
