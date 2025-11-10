@@ -96,12 +96,27 @@
   </footer>
 
   <!-- ✅ 맨 아래로 이동 버튼 (정상 동작 버전) -->
-  <div class="go-bottom" onclick="scrollToBottom()">↓</div>
+<!-- ✅ 맨 아래로 이동 버튼 -->
+<div class="go-bottom" onclick="scrollToBottom()">
+  ↓
+</div>
+
+<!-- ✅ 맨 위로 이동 버튼 -->
+<div class="go-top" onclick="scrollToTop()">
+  ↑
+</div>
 
 <script>
   function scrollToBottom() {
     window.scrollTo({
       top: document.body.scrollHeight,
+      behavior: "smooth"
+    });
+  }
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
       behavior: "smooth"
     });
   }
