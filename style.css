@@ -8,7 +8,9 @@ body {
   line-height: 1.6;
 }
 
-/* ✅ HERO 슬라이더 */
+/* ========================================================
+   ✅ 1. HERO 인물 사진 — 1장씩 넘어가는 슬라이드
+   ======================================================== */
 .heroSwiper {
   width: 100%;
   height: 430px;
@@ -20,7 +22,9 @@ body {
   object-fit: cover;
 }
 
-/* ✅ 출판기념회 영상 */
+/* ========================================================
+   ✅ 2. 출판기념회 영상
+   ======================================================== */
 .main-video-section {
   text-align: center;
   padding: 40px 20px;
@@ -40,7 +44,9 @@ body {
   border: none;
 }
 
-/* ✅ 플래그 + 발자취 2단 구조 */
+/* ========================================================
+   ✅ 3. 플래그 + 발자취 (2단)
+   ======================================================== */
 .content {
   display: flex;
   justify-content: center;
@@ -61,7 +67,13 @@ body {
 
 .flag-box h3 {
   font-size: 20px;
-  margin-bottom: 6px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.flag-box p {
+  color: #333;
+  margin: 0;
 }
 
 .videos {
@@ -76,10 +88,18 @@ body {
   object-fit: cover;
 }
 
-/* ✅ SNS 아이콘 */
+/* ========================================================
+   ✅ 4. SNS 아이콘 (PC는 가로, 모바일은 2열)
+   ======================================================== */
 .sns-section {
   text-align: center;
   padding: 50px 20px 30px;
+}
+
+.sns-section h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  font-weight: 700;
 }
 
 .sns-links {
@@ -87,6 +107,12 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   gap: 40px;
+}
+
+.sns-item {
+  text-decoration: none;
+  color: black;
+  text-align: center;
 }
 
 .icon-box img {
@@ -106,7 +132,9 @@ body {
   align-items: center;
 }
 
-/* ✅ Footer */
+/* ========================================================
+   ✅ 5. Footer
+   ======================================================== */
 footer {
   text-align: center;
   padding: 25px 0;
@@ -115,17 +143,42 @@ footer {
   color: #555;
 }
 
-/* ✅ 모바일 */
+/* ========================================================
+   ✅ 6. 모바일 반응형 (SNS 2열 복구)
+   ======================================================== */
 @media (max-width: 768px) {
+
+  /* ✅ 인물 슬라이드 */
   .heroSwiper {
     height: 300px;
   }
 
+  /* ✅ 출판기념회 영상 */
   .main-video-section iframe {
     height: 260px;
   }
 
+  /* ✅ 숏츠 */
   .videos iframe {
     height: 380px;
+  }
+
+  /* ✅ SNS — 원래처럼 2열 배열 */
+  .sns-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* ✅ 2개씩 나열 */
+    gap: 25px 24px;
+    justify-items: center;
+  }
+
+  .sns-item {
+    width: 100%;
+    max-width: 180px; /* 모바일에서 카드 크기 안정 */
+  }
+
+  .icon-box img,
+  .naver-icon {
+    width: 56px;
+    height: 56px;
   }
 }
