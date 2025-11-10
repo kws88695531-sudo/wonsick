@@ -8,18 +8,33 @@ body {
 }
 
 /* ============================
-    ✅ HERO (상단 출판기념회 영상)
+   ✅ HERO (상단 인물 사진)
    ============================ */
-.hero-video {
+.hero-img {
   width: 100%;
-  height: 420px;
+  height: auto;
   display: block;
-  border: none;
   object-fit: cover;
 }
 
 /* ============================
-   ✅ SNS 링크 섹션
+   ✅ 메인 출판기념회 영상
+   ============================ */
+.main-video-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.main-video-section iframe {
+  width: 90%;
+  max-width: 800px;
+  height: 450px;
+  border-radius: 12px;
+  border: none;
+}
+
+/* ============================
+   ✅ SNS 링크 섹션 
    ============================ */
 .sns-section {
   text-align: center;
@@ -42,11 +57,10 @@ body {
   gap: 10px;
 }
 
-/* ✅ 아이콘 공통 규격 */
+/* ✅ SNS 아이콘 공통 규격 */
 .icon-box {
   width: 60px;
   height: 60px;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,37 +75,30 @@ body {
 .naver-icon {
   width: 48px;
   height: 48px;
-
   background: #00DC00;
   border-radius: 10px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-weight: 700;
   font-size: 30px;
-  color: #FFFFFF;
-
-  user-select: none;
+  color: #fff;
 }
 
 /* ============================
-   ✅ MAIN CONTENT
+   ✅ MAIN CONTENT (2단 구조)
    ============================ */
 .content {
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 40px;
   padding: 40px;
   flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
-/* ✅ 왼쪽: 공원식 플래그 */
+/* ✅ 왼쪽 플래그 */
 .profile {
-  max-width: 420px;
+  max-width: 400px;
 }
 
 .flag-box {
@@ -106,26 +113,16 @@ body {
   color: #333;
 }
 
-/* ✅ 오른쪽: 영상 */
+/* ✅ 오른쪽 발자취 영상 */
 .videos {
   max-width: 550px;
 }
 
-.video-item {
-  margin-bottom: 40px;
-}
-
-.video-item iframe {
+.videos iframe {
   width: 100%;
   height: 315px;
   border-radius: 12px;
   border: none;
-}
-
-.video-desc {
-  margin-top: 10px;
-  font-size: 15px;
-  color: #444;
 }
 
 /* ============================
@@ -134,17 +131,17 @@ body {
 footer {
   text-align: center;
   padding: 30px 0;
-  font-size: 14px;
   color: #555;
+  font-size: 14px;
   margin-top: 50px;
 }
 
 /* ============================
-   ✅ MOBILE 반응형
+   ✅ 반응형
    ============================ */
 @media (max-width: 768px) {
-  .hero-video {
-    height: 240px;
+  .main-video-section iframe {
+    height: 250px;
   }
 
   .content {
@@ -155,19 +152,5 @@ footer {
   .profile,
   .videos {
     max-width: 100%;
-  }
-
-  .sns-links {
-    gap: 20px;
-  }
-
-  .icon-box {
-    width: 50px;
-    height: 50px;
-  }
-
-  .icon-box img {
-    width: 50px;
-    height: 50px;
   }
 }
