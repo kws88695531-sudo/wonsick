@@ -16,6 +16,33 @@ body {
   display: block;
   object-fit: cover;
 }
+/* ✅ 오른쪽 하단 고정 '맨 아래로' 버튼 */
+.go-bottom {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 55px;
+  height: 55px;
+  background: #000000cc; /* 반투명 검정 */
+  color: #fff;
+  border-radius: 50%;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+  z-index: 999;
+
+  transition: 0.2s ease;
+}
+
+.go-bottom:hover {
+  background: #000000ee;
+  transform: translateY(-3px);
+}
 
 /* ============================
    ✅ SNS SECTION
