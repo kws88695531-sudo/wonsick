@@ -18,7 +18,7 @@ body {
 }
 
 /* ============================
-   ✅ 메인 출판기념회 영상
+   ✅ 메인 출판기념회 영상 (크게 + 중앙)
    ============================ */
 .main-video-section {
   text-align: center;
@@ -26,15 +26,17 @@ body {
 }
 
 .main-video-section iframe {
-  width: 90%;
-  max-width: 800px;
-  height: 450px;
+  width: 100%;
+  max-width: 1100px;   /* ✅ 영상 대형화 */
+  height: 620px;       /* ✅ 세로 비율 크게 */
   border-radius: 12px;
   border: none;
+  display: block;
+  margin: 0 auto;      /* ✅ 진짜 센터 정렬 */
 }
 
 /* ============================
-   ✅ SNS 링크 섹션 
+   ✅ SNS 링크 섹션
    ============================ */
 .sns-section {
   text-align: center;
@@ -86,7 +88,7 @@ body {
 }
 
 /* ============================
-   ✅ MAIN CONTENT (2단 구조)
+   ✅ MAIN CONTENT (좌우 2단)
    ============================ */
 .content {
   display: flex;
@@ -137,11 +139,12 @@ footer {
 }
 
 /* ============================
-   ✅ 반응형
+   ✅ MOBILE 반응형
    ============================ */
 @media (max-width: 768px) {
+
   .main-video-section iframe {
-    height: 250px;
+    height: 240px;   /* ✅ 모바일에서는 자동 축소 */
   }
 
   .content {
