@@ -15,7 +15,7 @@ body {
   object-fit: cover;
 }
 
-/* ✅ 맨 아래로 이동 버튼 */
+/* ✅ 맨 아래로 이동 버튼 (↓) */
 .go-bottom {
   position: fixed;
   bottom: 25px;
@@ -41,6 +41,32 @@ body {
   transform: translateY(-3px);
 }
 
+/* ✅ 맨 위로 이동 버튼 (↑) */
+.go-top {
+  position: fixed;
+  bottom: 95px; /* ↓ 버튼 위로 살짝 띄운 위치 */
+  right: 25px;
+  width: 55px;
+  height: 55px;
+  background: #000000cc;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+  z-index: 999;
+  transition: 0.2s ease;
+}
+
+.go-top:hover {
+  background: #000000ee;
+  transform: translateY(-3px);
+}
+
 /* SNS SECTION */
 .sns-section {
   text-align: center;
@@ -53,12 +79,12 @@ body {
   margin-bottom: 30px;
 }
 
-/* ✅ SNS PC 버전 (정상 배치 버전) */
+/* ✅ SNS PC 버전 */
 .sns-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  column-gap: 40px;
+  column-gap: 40px; /* PC 넉넉 간격 */
   row-gap: 35px;
 }
 
@@ -82,7 +108,7 @@ body {
   height: 100%;
 }
 
-/* ✅ 네이버 아이콘 공통 적용 */
+/* ✅ 네이버 아이콘 공통 */
 .naver-icon {
   width: 60px !important;
   height: 60px !important;
@@ -98,11 +124,12 @@ body {
   color: #fff !important;
 }
 
+/* 네이버 이미지 불러오면 차단 */
 .icon-box img[src*="naver"] {
   display: none !important;
 }
 
-/* ✅ 모바일 SNS */
+/* ✅ 모바일 SNS 간격 */
 @media (max-width: 768px) {
   .sns-links {
     column-gap: 25px;
