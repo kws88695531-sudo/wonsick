@@ -202,10 +202,11 @@ footer {
 
   /* SNS 2열 */
   .sns-links {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px; /* ✅ 위/아래/좌/우 전부 동일 간격 */
-    justify-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;   /* 중앙 정렬 */
+    column-gap: 0;             /* ✅ 좌우 간격 0 */
+    row-gap: 20px;             /* ✅ 위아래 간격만 적용 */
   }
 
   /* 네이버 아이콘 모바일 동일 */
