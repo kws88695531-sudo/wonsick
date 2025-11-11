@@ -15,11 +15,11 @@ body {
   object-fit: cover;
 }
 
-/* ✅ 맨 위/맨 아래 버튼 — 오른쪽 아래 세로 배치 */
+/* ✅ 맨 위/아래 버튼 (오른쪽 세로 배치) */
 .go-bottom,
 .go-top {
   position: fixed;
-  right: 25px;          /* 두 버튼 모두 오른쪽 */
+  right: 25px;
   width: 55px;
   height: 55px;
   background: #000000cc;
@@ -42,17 +42,15 @@ body {
   transform: translateY(-3px);
 }
 
-/* ✅ 아래로 이동 버튼 (아래쪽) */
 .go-bottom {
   bottom: 25px;
 }
 
-/* ✅ 위로 이동 버튼 (그 위) */
 .go-top {
-  bottom: 90px;       /* go-bottom 위로 딱 붙음 */
+  bottom: 90px;
 }
 
-/* SNS SECTION */
+/* ✅ SNS SECTION */
 .sns-section {
   text-align: center;
   padding: 40px 0;
@@ -63,21 +61,12 @@ body {
   margin-bottom: 30px;
 }
 
-/* ✅ SNS 2개씩 정렬 */
-.sns-links {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
-  row-gap: 35px;
-  column-gap: 40px;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.sns-item,
-.sns-item span {
-  text-decoration: none !important;
-  color: #000;
+/* ✅ 줄 정렬 */
+.sns-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 35px;
 }
 
 .sns-item {
@@ -85,6 +74,8 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  text-decoration: none;
+  color: #000;
 }
 
 /* 아이콘 박스 */
@@ -92,8 +83,8 @@ body {
   width: 60px;
   height: 60px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .icon-box img {
@@ -101,57 +92,51 @@ body {
   height: 100%;
 }
 
-/* ✅ 네이버 블로그 아이콘 */
+/* ✅ 네이버 블로그 */
 .naver-icon {
-  width: 60px !important;
-  height: 60px !important;
-  background: #00DC00 !important;
-  border-radius: 12px !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  font-weight: 700 !important;
-  font-size: 36px !important;
-  color: #fff !important;
+  width: 60px;
+  height: 60px;
+  background: #00dc00;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
 }
 
-/* ✅ 네이버 밴드 아이콘 */
+/* ✅ 네이버 밴드 */
 .band-icon {
-  width: 60px !important;
-  height: 60px !important;
-  background: #1ECD41 !important;  /* 밴드 공식 컬러 */
-  border-radius: 50% !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  font-weight: 700 !important;
-  font-size: 32px !important;
-  font-family: Arial, sans-serif !important;
-  color: #fff !important;
+  width: 60px;
+  height: 60px;
+  background: #1ecd41;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* ✅ 모바일 자동 반응형 */
+/* ✅ 모바일 반응형 */
 @media (max-width: 768px) {
-  .sns-links {
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 25px;
-    column-gap: 25px;
+  .sns-row {
+    flex-wrap: wrap;
+    gap: 25px;
   }
 
   .icon-box,
   .naver-icon,
   .band-icon {
-    width: 65px !important;
-    height: 65px !important;
-    font-size: 38px !important;
+    width: 65px;
+    height: 65px;
+    font-size: 38px;
   }
 }
 
-/* 출판기념회 영상 */
+/* ✅ 영상 */
 .main-video-section {
   text-align: center;
   padding: 40px 20px;
@@ -165,7 +150,7 @@ body {
   border-radius: 12px;
 }
 
-/* CONTENT */
+/* ✅ CONTENT */
 .content {
   display: flex;
   justify-content: center;
@@ -174,7 +159,7 @@ body {
   flex-wrap: wrap;
 }
 
-/* 플래그 박스 */
+/* 프로필 */
 .profile {
   max-width: 420px;
 }
@@ -190,7 +175,7 @@ body {
   margin-top: 20px;
 }
 
-/* 숏츠 영상 */
+/* 숏츠 */
 .videos {
   max-width: 360px;
   width: 100%;
