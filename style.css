@@ -14,134 +14,168 @@ body {
   object-fit: cover;
 }
 
-/* 제목 전부 중앙 */
-h1, h2, h3, .center-title { text-align: center !important; }
+/* 제목 전체 중앙 */
+h1, h2, h3, .center-title {
+  text-align: center !important;
+}
 
 /* ========== SNS SECTION ========== */
-.sns-section { padding: 40px 0; }
 
-/* PC: 5개 가로 한 줄 고정 */
-.sns-row{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:45px;
-  flex-wrap:nowrap;
+.sns-section {
+  padding: 40px 0;
 }
 
-.sns-item{
-  text-decoration:none;
-  color:#000;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:8px;
+/* ✅ PC = 5개 가로 1줄 */
+.sns-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 45px;
 }
 
-.icon-box{ width:75px; height:75px; display:flex; justify-content:center; align-items:center; }
-.icon-box img{ width:100%; height:100%; }
-
-/* 네이버 아이콘들 */
-.naver-icon{
-  width:75px; height:75px;
-  background:#00dc00; color:#fff; font-size:42px; font-weight:700;
-  border-radius:12px; display:flex; justify-content:center; align-items:center;
-}
-.band-icon{
-  width:75px; height:75px;
-  background:#1ecd41; color:#fff; font-size:38px; font-weight:700;
-  border-radius:50%; display:flex; justify-content:center; align-items:center;
+.sns-item {
+  text-decoration: none;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
-/* ========== 출판기념회 영상: 정중앙 ========== */
-.main-video-section iframe{
-  width:90%;
-  max-width:900px;
-  height:480px;
-  border:none;
-  border-radius:12px;
-  display:block;
-  margin:0 auto; /* 중앙 */
+.icon-box {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-box img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 네이버 계열 */
+.naver-icon {
+  width: 75px; height: 75px;
+  background: #00dc00; color: #fff;
+  font-size: 42px; font-weight: 700;
+  border-radius: 12px;
+  display: flex; justify-content: center; align-items: center;
+}
+.band-icon {
+  width: 75px; height: 75px;
+  background: #1ecd41; color: #fff;
+  font-size: 38px; font-weight: 700;
+  border-radius: 50%;
+  display: flex; justify-content: center; align-items: center;
+}
+
+/* ========== 출판기념회 영상 중앙 ========== */
+
+.main-video-section iframe {
+  width: 90%;
+  max-width: 900px;
+  height: 480px;
+  border: none;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
 }
 
 /* ========== 본문(플래그+숏츠) ========== */
-.content{
-  display:flex;
-  justify-content:center;
-  gap:40px;
-  flex-wrap:wrap;
-  padding:40px;
+
+.content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px;
 }
 
-/* 왼쪽 박스 */
-.profile{ max-width:420px; width:100%; }
-.flag-box{ background:#f7f7f7; padding:22px; border-radius:12px; }
+.profile {
+  max-width: 420px;
+  width: 100%;
+}
 
-/* 숏츠 영상: 왼쪽과 동일 폭 */
-.videos iframe{
-  width:100%;
-  max-width:420px;
-  aspect-ratio:9/16;
-  border:none;
-  border-radius:12px;
-  display:block;
-  margin:0 auto;
+.flag-box {
+  background: #f7f7f7;
+  padding: 22px;
+  border-radius: 12px;
+}
+
+/* 숏츠 영상 */
+.videos iframe {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 9/16;
+  border: none;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Footer */
-footer{ text-align:center; padding:30px; color:#555; }
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #555;
+}
 
 /* 위/아래 버튼 */
-.go-top,.go-bottom{
-  position:fixed; right:25px; width:55px; height:55px;
-  background:#222; color:#fff; border-radius:50%;
-  display:flex; justify-content:center; align-items:center;
-  font-size:24px; cursor:pointer; z-index:999;
+.go-top,
+.go-bottom {
+  position: fixed;
+  right: 25px;
+  width: 55px; height: 55px;
+  background: #222;
+  color: #fff;
+  border-radius: 50%;
+  display: flex; justify-content: center; align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 999;
 }
-.go-top{ bottom:90px; }
-.go-bottom{ bottom:25px; }
+.go-top { bottom: 90px; }
+.go-bottom { bottom: 25px; }
 
-/* ========== MOBILE (<=768px) — 아이콘 작게 + 3/2 레이아웃 강제 ========== */
-@media (max-width: 768px){
+/* ========== ✅ MOBILE: 2 / 2 / 1 (완전 고정) ========== */
 
-  /* 컨테이너 자체를 감싸고 중앙 정렬 */
-  .sns-row{
-    flex-wrap:wrap !important;
-    justify-content:center !important;
-    gap:22px !important;
+@media (max-width: 768px) {
+
+  .sns-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
   }
 
-  /* 아이콘 크기 더 작게 */
+  /* ✅ 모바일 아이콘 크기 줄이기 */
   .icon-box,
   .naver-icon,
-  .band-icon{
-    width:56px !important;
-    height:56px !important;
-    font-size:30px !important;
+  .band-icon {
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 30px !important;
   }
 
-  /* 첫 줄: 1~3번째 -> 3등분 */
-  .sns-row .sns-item:nth-child(-n+3){
-    width:30% !important;   /* 30 + 30 + 30 = 90% (+gap 여유) */
+  /* ✅ 1~4번째 → 50% (2개씩 두 줄) */
+  .sns-item:nth-child(-n+4) {
+    width: 50% !important;
   }
 
-  /* 둘째 줄: 4~5번째 -> 2등분(가운데 정렬) */
-  .sns-row .sns-item:nth-child(n+4){
-    width:40% !important;
+  /* ✅ 5번째만 → 100% (가운데 단독) */
+  .sns-item:nth-child(5) {
+    width: 100% !important;
   }
 
-  /* 혹시 남아있는 폭 규칙 무력화 */
-  .sns-row .sns-item{
-    flex:0 0 auto !important;
-    min-width:0 !important;
+  /* ✅ 영상 크기 */
+  .main-video-section iframe {
+    max-width: 100%;
+    height: 260px;
   }
 
-  /* 출판기념회 영상 */
-  .main-video-section iframe{
-    max-width:100% !important;
-    height:260px !important;
+  .videos iframe {
+    max-width: 100%;
   }
-
-  /* 숏츠 영상 */
-  .videos iframe{ max-width:100% !important; }
 }
