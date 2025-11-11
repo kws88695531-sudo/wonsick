@@ -19,7 +19,7 @@ h1, h2, h3 { text-align: center; margin: 0 0 16px; }
 #sns { padding: 40px 16px; }
 #sns h2 { font-size: 28px; margin-bottom: 28px; }
 
-/* 다른 레이아웃 충돌 무시하고 Grid 강제 */
+/* Grid 전체 구조 */
 #sns .sns-grid {
   list-style: none;
   padding: 0;
@@ -28,7 +28,7 @@ h1, h2, h3 { text-align: center; margin: 0 0 16px; }
   grid-auto-rows: auto;
   justify-items: center;
   align-items: start;
-  gap: 26px 32px;            /* row-gap / col-gap */
+  gap: 26px 32px;
 }
 
 /* PC: 5개 가로 한 줄 */
@@ -39,15 +39,14 @@ h1, h2, h3 { text-align: center; margin: 0 0 16px; }
   }
 }
 
-/* 모바일: 3개 + 2개 (가운데 정렬) */
+/* 모바일: 3개 + 2개 (왼쪽 정렬로 자연스럽게) */
 @media (max-width: 768px) {
   #sns .sns-grid {
-    grid-template-columns: repeat(3, 1fr) !important; /* 첫 줄 3개 */
+    grid-template-columns: repeat(3, 1fr) !important;
     justify-content: center;
   }
-  /* 4번째는 2열의 2번째 칸, 5번째는 3번째 칸 → 중앙에 2개 배치 */
-  #sns .sns-grid > li:nth-child(4) { grid-column: 2 / span 1 !important; }
-  #sns .sns-grid > li:nth-child(5) { grid-column: 3 / span 1 !important; }
+
+  /* ✅ 중요: 4번/5번 위치 강제하는 코드 제거 (왼쪽부터 자연 배치됨) */
 }
 
 /* 아이템 */
@@ -58,6 +57,7 @@ h1, h2, h3 { text-align: center; margin: 0 0 16px; }
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  font-weight: 600;  /* ✅ 글자 굵기 추가 */
 }
 
 /* 아이콘 (PC 기본 크기) */
@@ -86,7 +86,7 @@ h1, h2, h3 { text-align: center; margin: 0 0 16px; }
   border-radius: 50%;
 }
 
-/* 모바일에서 아이콘 더 작게 */
+/* 모바일에서 아이콘 크기 감소 */
 @media (max-width: 768px) {
   #sns .icon { width: 56px; height: 56px; }
   #sns .icon.naver { font-size: 30px; }
@@ -102,7 +102,7 @@ h1, h2, h3 { text-align: center; margin: 0 0 16px; }
   border: 0;
   border-radius: 12px;
   display: block;
-  margin: 0 auto; /* 정중앙 */
+  margin: 0 auto;
 }
 @media (max-width: 768px) {
   .main-video-section iframe { max-width: 100%; height: 260px; }
@@ -124,7 +124,7 @@ h1, h2, h3 { text-align: center; margin: 0 0 16px; }
 .videos { max-width: 420px; width: 100%; }
 .videos iframe {
   width: 100%;
-  max-width: 420px;   /* 왼쪽과 동일 폭 */
+  max-width: 420px;
   aspect-ratio: 9 / 16;
   border: 0;
   border-radius: 12px;
