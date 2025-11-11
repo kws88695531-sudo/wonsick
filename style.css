@@ -1,35 +1,43 @@
-/* ✅ SNS SECTION */
+/* ========== RESET ========== */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: #ffffff;
+  color: #000;
+  line-height: 1.5;
+}
+
+/* ========== HERO ========== */
+.hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* ========== SNS SECTION ========== */
 .sns-section {
   text-align: center;
-  padding: 40px 0;
+  padding: 40px 16px;
 }
 
 .sns-section h2 {
   font-size: 28px;
-  margin-bottom: 35px;
+  margin: 0 0 35px;
 }
 
-/* ✅ PC: 한 줄로 강제 가로 정렬 */
 .sns-row {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: nowrap;      /* ✅ 한 줄 고정 */
+  flex-wrap: nowrap;      /* ✅ PC 한 줄 강제 */
   gap: 40px;
-  margin-bottom: 35px;
+  margin: 0 auto 35px;
 }
 
-/* ✅ 3개 줄 */
-.row-3 .sns-item {
-  width: auto;
-}
-
-/* ✅ 2개 줄 */
-.row-2 .sns-item {
-  width: auto;
-}
-
-/* ✅ SNS 아이템 공통 */
 .sns-item {
   text-decoration: none;
   color: #000;
@@ -37,9 +45,9 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  min-width: 110px;       /* 아이콘명 줄바꿈 방지 */
 }
 
-/* ✅ 아이콘 (PC 기본 크기) */
 .icon-box {
   width: 75px;
   height: 75px;
@@ -53,7 +61,7 @@
   height: 100%;
 }
 
-/* ✅ 네이버 블로그 */
+/* 네이버 블로그 */
 .naver-icon {
   width: 75px;
   height: 75px;
@@ -67,7 +75,7 @@
   align-items: center;
 }
 
-/* ✅ 네이버 밴드 */
+/* 네이버 밴드 */
 .band-icon {
   width: 75px;
   height: 75px;
@@ -81,17 +89,141 @@
   align-items: center;
 }
 
-/* ✅ Mobile (768px 이하 → 2열 정렬) */
-@media (max-width: 768px) {
+/* ========== VIDEO (출판기념회) ========== */
+.main-video-section {
+  text-align: center;
+  padding: 40px 16px;
+}
 
+.video-wrap {
+  width: min(900px, 90vw);
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.video-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* ========== CONTENT (플래그 + 숏츠) ========== */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px 16px;
+  flex-wrap: wrap;
+}
+
+.profile {
+  max-width: 480px;
+  width: 100%;
+}
+
+.profile h2 {
+  text-align: center;
+  margin: 0 0 16px;
+}
+
+.flag-box {
+  background: #f7f7f7;
+  padding: 22px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+}
+
+.flag-box h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.flag-box p {
+  margin: 0;
+  color: #333;
+}
+
+.videos {
+  max-width: 380px;
+  width: 100%;
+}
+
+.videos h2 {
+  text-align: center;
+  margin: 0 0 16px;
+}
+
+.shorts-wrap {
+  width: 100%;
+  aspect-ratio: 9 / 16;   /* 세로형 영상 */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.shorts-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  object-fit: cover;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  text-align: center;
+  padding: 30px 0 60px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* ========== 고정 버튼 (맨 위/맨 아래) ========== */
+.go-bottom,
+.go-top {
+  position: fixed;
+  right: 25px;
+  width: 55px;
+  height: 55px;
+  background: #000000cc;
+  color: #fff;
+  border: 0;
+  border-radius: 50%;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+  z-index: 999;
+  transition: transform .18s ease, background .18s ease;
+}
+
+.go-bottom { bottom: 25px; }
+.go-top    { bottom: 90px; }
+
+.go-bottom:hover,
+.go-top:hover {
+  background: #000000ee;
+  transform: translateY(-3px);
+}
+
+/* ========== 모바일 반응형 ========== */
+@media (max-width: 768px) {
   .sns-row {
-    flex-wrap: wrap;      /* ✅ 2열로 바뀌게 */
-    gap: 25px;
+    flex-wrap: wrap;   /* 모바일은 2열로 변경 */
+    gap: 24px;
   }
 
   .row-3 .sns-item,
   .row-2 .sns-item {
-    width: 45%;           /* ✅ 2열 */
+    width: 45%;
+    min-width: 0;
   }
 
   .icon-box,
@@ -101,4 +233,11 @@
     height: 70px;
     font-size: 38px;
   }
+
+  .content {
+    gap: 28px;
+    padding-bottom: 20px;
+  }
+
+  footer { padding-bottom: 80px; } /* 하단 버튼 겹침 방지 */
 }
