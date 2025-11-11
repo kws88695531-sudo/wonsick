@@ -137,6 +137,23 @@ body {
 .icon-box img[src*="naver"] {
   display: none !important;
 }
+/* ✅ 네이버 밴드 아이콘 */
+.band-icon {
+  width: 60px !important;
+  height: 60px !important;
+  background: #1ECD41 !important; /* 밴드 공식 컬러 */
+  border-radius: 50% !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  font-weight: 700 !important;
+  font-size: 32px !important;
+  font-family: Arial, sans-serif !important;
+  color: #fff !important;
+}
+
 
 /* ✅ 모바일 버전 (정상 2개씩 유지) */
 @media (max-width: 768px) {
