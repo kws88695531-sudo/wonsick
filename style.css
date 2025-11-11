@@ -19,7 +19,7 @@ h1, h2, h3 { text-align: center; margin: 0 0 16px; }
 #sns { padding: 40px 16px; }
 #sns h2 { font-size: 28px; margin-bottom: 28px; }
 
-/* Grid 전체 구조 */
+/* Grid 레이아웃 */
 #sns .sns-grid {
   list-style: none;
   padding: 0;
@@ -39,14 +39,12 @@ h1, h2, h3 { text-align: center; margin: 0 0 16px; }
   }
 }
 
-/* 모바일: 3개 + 2개 (왼쪽 정렬로 자연스럽게) */
+/* 모바일: 3개 + 2개 (왼쪽 정렬 자동 배치) */
 @media (max-width: 768px) {
   #sns .sns-grid {
     grid-template-columns: repeat(3, 1fr) !important;
     justify-content: center;
   }
-
-  /* ✅ 중요: 4번/5번 위치 강제하는 코드 제거 (왼쪽부터 자연 배치됨) */
 }
 
 /* 아이템 */
@@ -57,10 +55,10 @@ h1, h2, h3 { text-align: center; margin: 0 0 16px; }
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  font-weight: 600;  /* ✅ 글자 굵기 추가 */
+  font-weight: 600;   /* ✅ 글자 굵기 강화 */
 }
 
-/* 아이콘 (PC 기본 크기) */
+/* 아이콘 기본 */
 #sns .icon {
   width: 75px;
   height: 75px;
@@ -86,7 +84,7 @@ h1, h2, h3 { text-align: center; margin: 0 0 16px; }
   border-radius: 50%;
 }
 
-/* 모바일에서 아이콘 크기 감소 */
+/* 모바일 아이콘 축소 */
 @media (max-width: 768px) {
   #sns .icon { width: 56px; height: 56px; }
   #sns .icon.naver { font-size: 30px; }
@@ -116,8 +114,14 @@ h1, h2, h3 { text-align: center; margin: 0 0 16px; }
   padding: 40px 16px;
   flex-wrap: wrap;
 }
+
 .profile { max-width: 420px; width: 100%; }
-.flag-box { background: #f7f7f7; border: 1px solid #eee; border-radius: 12px; padding: 22px; }
+.flag-box {
+  background: #f7f7f7;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 22px;
+}
 .flag-box h3 { margin: 0 0 6px; font-size: 18px; }
 .flag-box p { margin: 0; color: #333; }
 
@@ -132,8 +136,48 @@ h1, h2, h3 { text-align: center; margin: 0 0 16px; }
   margin: 0 auto;
 }
 
+/* ========= PC에서 좌우 박스 크기·높이 동일하게 맞추기 ========= */
+@media (min-width: 769px) {
+
+  /* 두 박스를 같은 높이로 강제 */
+  .content {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  /* 폭 동일 */
+  .profile,
+  .videos {
+    width: 100%;
+    max-width: 480px !important;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 왼쪽 박스를 영상 높이에 맞추기 */
+  .flag-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* 영상 높이 고정 → 전체 틀의 기준 */
+  .videos iframe {
+    max-width: 480px !important;
+    height: 480px !important;
+    flex-shrink: 0;
+  }
+}
+
 /* ========= 푸터 ========= */
-footer { text-align: center; padding: 30px 0 60px; color: #555; }
+footer {
+  text-align: center;
+  padding: 30px 0 60px;
+  color: #555;
+}
 
 /* ========= 스크롤 버튼 ========= */
 .go-bottom, .go-top {
@@ -143,8 +187,9 @@ footer { text-align: center; padding: 30px 0 60px; color: #555; }
   background: #222; color: #fff;
   border: 0; border-radius: 50%;
   font-size: 24px;
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center; justify-content: center;
   cursor: pointer; z-index: 999;
 }
 .go-bottom { bottom: 25px; }
-.go-top    { bottom: 90px; }
+.go-top { bottom: 90px; }
