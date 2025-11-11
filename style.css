@@ -26,16 +26,15 @@ body {
   margin-bottom: 30px;
 }
 
-/* ✅ PC: SNS 아이콘 5개를 가로 한 줄로 */
+/* ✅ PC: 5개 가로 한 줄 */
 .sns-row {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: nowrap;
   gap: 50px;
-  flex-wrap: nowrap;   /* ✅ 한 줄 고정 */
 }
 
-/* SNS ITEM */
 .sns-item {
   text-decoration: none;
   color: #000;
@@ -43,7 +42,6 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  min-width: 110px;
 }
 
 .icon-box {
@@ -59,7 +57,7 @@ body {
   height: 100%;
 }
 
-/* ✅ 네이버 블로그 */
+/* ✅ 네이버 */
 .naver-icon {
   width: 75px;
   height: 75px;
@@ -73,7 +71,6 @@ body {
   align-items: center;
 }
 
-/* ✅ 네이버 밴드 */
 .band-icon {
   width: 75px;
   height: 75px;
@@ -87,7 +84,7 @@ body {
   align-items: center;
 }
 
-/* ✅ 출판기념회 영상 */
+/* ✅ 출판기념회 영상 (원래 크기로 복원) */
 .main-video-section {
   text-align: center;
   padding: 40px 20px;
@@ -97,11 +94,11 @@ body {
   width: 90%;
   max-width: 900px;
   height: 480px;
-  border-radius: 12px;
   border: none;
+  border-radius: 12px;
 }
 
-/* ✅ 전체 CONTENT */
+/* ✅ 콘텐츠 */
 .content {
   display: flex;
   justify-content: center;
@@ -110,7 +107,6 @@ body {
   flex-wrap: wrap;
 }
 
-/* 플래그 박스 */
 .profile {
   max-width: 420px;
 }
@@ -121,23 +117,21 @@ body {
   border-radius: 12px;
 }
 
-/* 숏츠 영상 */
 .videos iframe {
   width: 100%;
   aspect-ratio: 9 / 16;
-  border: none;
   border-radius: 12px;
-  object-fit: cover;
+  border: none;
 }
 
-/* ✅ FOOTER */
+/* ✅ Footer */
 footer {
   text-align: center;
   padding: 30px 0;
   color: #555;
 }
 
-/* ✅ 맨 위/아래 버튼 */
+/* ✅ 버튼 */
 .go-bottom,
 .go-top {
   position: fixed;
@@ -152,15 +146,13 @@ footer {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  backdrop-filter: blur(6px);
   z-index: 999;
 }
 
 .go-bottom { bottom: 25px; }
 .go-top { bottom: 90px; }
 
-/* ✅ MOBILE = SNS를 3개 + 2개로 자동 배치 */
+/* ✅ MOBILE — SNS 3개 + 2개 정확히 맞추기 */
 @media (max-width: 768px) {
 
   .sns-row {
@@ -169,7 +161,7 @@ footer {
   }
 
   .sns-item {
-    width: 30%;  /* ✅ 첫 줄 3개 */
+    width: 33%;  /* ✅ 첫 줄 3개 */
   }
 
   .sns-item:nth-child(n+4) {
