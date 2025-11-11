@@ -10,9 +10,15 @@ body {
 /* HERO */
 .hero-img {
   width: 100%;
-  height: auto;
   display: block;
   object-fit: cover;
+}
+
+/* ✅ 제목 중앙 강제 */
+.center-title,
+.sns-title {
+  text-align: center !important;
+  width: 100%;
 }
 
 /* ✅ SNS SECTION */
@@ -21,18 +27,11 @@ body {
   padding: 40px 0;
 }
 
-.sns-section h2 {
-  font-size: 28px;
-  margin-bottom: 30px;
-}
-
-/* ✅ PC: 5개 가로 한 줄 */
 .sns-row {
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 50px;
+  gap: 45px;
+  flex-wrap: nowrap;  /* ✅ PC 한 줄 고정 */
 }
 
 .sns-item {
@@ -48,111 +47,84 @@ body {
   width: 75px;
   height: 75px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .icon-box img {
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
 }
 
-/* ✅ 네이버 */
 .naver-icon {
-  width: 75px;
-  height: 75px;
+  width: 75px; height: 75px;
   background: #00dc00;
-  border-radius: 12px;
   color: #fff;
+  border-radius: 12px;
   font-size: 42px;
   font-weight: 700;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex; justify-content: center; align-items: center;
 }
 
 .band-icon {
-  width: 75px;
-  height: 75px;
+  width: 75px; height: 75px;
   background: #1ecd41;
-  border-radius: 50%;
   color: #fff;
+  border-radius: 50%;
   font-size: 38px;
-  font-weight: 700;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex; justify-content: center; align-items: center;
 }
 
-/* ✅ 출판기념회 영상 (원래 크기로 복원) */
-.main-video-section {
-  text-align: center;
-  padding: 40px 20px;
-}
-
+/* ✅ 영상 */
 .main-video-section iframe {
   width: 90%;
   max-width: 900px;
   height: 480px;
-  border: none;
   border-radius: 12px;
+  border: none;
 }
 
-/* ✅ 콘텐츠 */
+/* ✅ CONTENT */
 .content {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 40px;
   padding: 40px;
-  flex-wrap: wrap;
 }
 
-.profile {
-  max-width: 420px;
-}
-
-.flag-box {
-  background: #f7f7f7;
-  padding: 22px;
-  border-radius: 12px;
-}
-
+/* ✅ 숏츠 영상 = 플래그 박스와 폭 동일 */
 .videos iframe {
   width: 100%;
-  aspect-ratio: 9 / 16;
+  max-width: 420px;
+  aspect-ratio: 9/16;
   border-radius: 12px;
   border: none;
 }
 
 /* ✅ Footer */
 footer {
+  padding: 30px;
   text-align: center;
-  padding: 30px 0;
   color: #555;
 }
 
-/* ✅ 버튼 */
-.go-bottom,
-.go-top {
+/* ✅ Buttons */
+.go-top, .go-bottom {
   position: fixed;
   right: 25px;
-  width: 55px;
-  height: 55px;
-  background: #000000cc;
+  width: 55px; height: 55px;
+  background: #222;
   color: #fff;
   border-radius: 50%;
-  font-size: 28px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex; justify-content: center; align-items: center;
+  font-size: 24px;
   cursor: pointer;
   z-index: 999;
 }
-
-.go-bottom { bottom: 25px; }
 .go-top { bottom: 90px; }
+.go-bottom { bottom: 25px; }
 
-/* ✅ MOBILE — SNS 3개 + 2개 정확히 맞추기 */
+/* ✅ MOBILE — SNS 3 + 2 완벽 고정 */
 @media (max-width: 768px) {
 
   .sns-row {
@@ -161,10 +133,14 @@ footer {
   }
 
   .sns-item {
-    width: 33%;  /* ✅ 첫 줄 3개 */
+    width: 33%;     /* ✅ 첫 줄 3개 */
   }
 
   .sns-item:nth-child(n+4) {
-    width: 45%; /* ✅ 둘째 줄 2개 */
+    width: 45%;     /* ✅ 두 번째 줄 2개 */
+  }
+
+  .videos iframe {
+    max-width: 100%;
   }
 }
