@@ -14,24 +14,23 @@ body {
   object-fit: cover;
 }
 
-/* ✅ 제목 중앙 강제 */
+/* ✅ 모든 제목 중앙정렬 */
 .center-title,
-.sns-title {
+h1, h2, h3 {
   text-align: center !important;
-  width: 100%;
 }
 
 /* ✅ SNS SECTION */
 .sns-section {
-  text-align: center;
   padding: 40px 0;
 }
 
+/* PC: 한 줄 5개 */
 .sns-row {
   display: flex;
   justify-content: center;
   gap: 45px;
-  flex-wrap: nowrap;  /* ✅ PC 한 줄 고정 */
+  flex-wrap: nowrap;
 }
 
 .sns-item {
@@ -47,40 +46,50 @@ body {
   width: 75px;
   height: 75px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .icon-box img {
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
+/* 네이버 계열 */
 .naver-icon {
-  width: 75px; height: 75px;
+  width: 75px;
+  height: 75px;
   background: #00dc00;
   color: #fff;
-  border-radius: 12px;
   font-size: 42px;
   font-weight: 700;
-  display: flex; justify-content: center; align-items: center;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .band-icon {
-  width: 75px; height: 75px;
+  width: 75px;
+  height: 75px;
   background: #1ecd41;
   color: #fff;
-  border-radius: 50%;
   font-size: 38px;
-  display: flex; justify-content: center; align-items: center;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* ✅ 영상 */
+/* ✅ 출판기념회 영상 */
 .main-video-section iframe {
   width: 90%;
   max-width: 900px;
   height: 480px;
   border-radius: 12px;
   border: none;
+  margin: 0 auto;
 }
 
 /* ✅ CONTENT */
@@ -92,13 +101,26 @@ body {
   padding: 40px;
 }
 
-/* ✅ 숏츠 영상 = 플래그 박스와 폭 동일 */
+.profile {
+  max-width: 420px;
+  width: 100%;
+}
+
+.flag-box {
+  background: #f7f7f7;
+  padding: 22px;
+  border-radius: 12px;
+}
+
+/* ✅ 숏츠 영상 = 왼쪽 플래그 박스 width와 동일 */
 .videos iframe {
   width: 100%;
-  max-width: 420px;
+  max-width: 420px;  /* ✅ 왼쪽과 동일 */
   aspect-ratio: 9/16;
   border-radius: 12px;
   border: none;
+  display: block;
+  margin: 0 auto;
 }
 
 /* ✅ Footer */
@@ -108,23 +130,27 @@ footer {
   color: #555;
 }
 
-/* ✅ Buttons */
+/* ✅ Scroll buttons */
 .go-top, .go-bottom {
   position: fixed;
   right: 25px;
-  width: 55px; height: 55px;
+  width: 55px;
+  height: 55px;
   background: #222;
   color: #fff;
   border-radius: 50%;
-  display: flex; justify-content: center; align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 24px;
   cursor: pointer;
   z-index: 999;
 }
+
 .go-top { bottom: 90px; }
 .go-bottom { bottom: 25px; }
 
-/* ✅ MOBILE — SNS 3 + 2 완벽 고정 */
+/* ✅ MOBILE (768px 이하) → SNS 3 + 2 강제 적용 */
 @media (max-width: 768px) {
 
   .sns-row {
@@ -133,11 +159,16 @@ footer {
   }
 
   .sns-item {
-    width: 33%;     /* ✅ 첫 줄 3개 */
+    width: 33%;        /* ✅ 첫 줄: 1~3 */
   }
 
   .sns-item:nth-child(n+4) {
-    width: 45%;     /* ✅ 두 번째 줄 2개 */
+    width: 50%;        /* ✅ 둘째 줄: 4~5 */
+  }
+
+  .main-video-section iframe {
+    max-width: 100%;
+    height: 280px;
   }
 
   .videos iframe {
