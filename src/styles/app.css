@@ -1,0 +1,552 @@
+/* ===============================
+   COLOR THEME: Premium Deep Red (Gold-leaning)
+   ✅ 레이아웃/간격/그리드 변경 없음
+   =============================== */
+
+/* ====== THEME + TYPO VARS ====== */
+:root{
+  --bg0:#1A0A10;
+  --bg1:#0C0508;
+
+  --glass: rgba(255,255,255,.10);
+  --glass2: rgba(255,255,255,.14);
+
+  --line: rgba(255,255,255,.18);
+  --line2: rgba(255,255,255,.28);
+
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.72);
+
+  --shadow: 0 20px 60px rgba(0,0,0,.55);
+  --shadow2: 0 12px 28px rgba(0,0,0,.45);
+
+  --radius: 20px;
+  --radius2: 26px;
+
+  /* Typography */
+  --fs-base: 18px;
+  --fs-sm: 15px;
+  --fs-xs: 14px;
+  --fs-title: 20px;
+  --fs-tab: 18px;
+  --fs-cardTitle: 19px;
+  --lh-base: 1.45;
+
+  /* (프로젝트에 이미 있다면 유지) */
+  --container: 980px;
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Pretendard", "Apple SD Gothic Neo",
+               "Segoe UI", Roboto, Arial, "Noto Sans KR", sans-serif;
+  color: var(--text);
+
+  background:
+    radial-gradient(1500px 980px at 50% -12%,
+      rgba(255,255,255,.16),
+      rgba(255,255,255,0) 62%
+    ),
+    radial-gradient(1200px 760px at 18% -12%,
+      rgba(255, 231, 170, .18),
+      rgba(255, 231, 170, 0) 64%
+    ),
+    radial-gradient(1100px 680px at 92% 6%,
+      rgba(255, 214, 140, .14),
+      rgba(255, 214, 140, 0) 62%
+    ),
+    radial-gradient(1200px 980px at 50% 118%,
+      rgba(255, 246, 220, .12),
+      rgba(255, 246, 220, 0) 66%
+    ),
+    linear-gradient(180deg,
+      rgba(18, 8, 12, 1) 0%,
+      rgba(14, 6, 9, 1) 55%,
+      rgba(12, 5, 7, 1) 100%
+    );
+
+  overflow-x:hidden;
+
+  font-size: var(--fs-base);
+  line-height: var(--lh-base);
+}
+
+/* HERO */
+.hero{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(900px 540px at 18% 18%, rgba(255, 255, 255, .14), transparent 58%),
+    linear-gradient(180deg, rgba(34, 10, 14, .04) 0%, rgba(0,0,0,.30) 80%, rgba(0,0,0,.52) 100%);
+  pointer-events:none;
+  z-index: 3;
+}
+
+.hero-inner{
+  width: min(var(--container), 100%);
+  margin: 0 auto;
+  position: relative;
+}
+
+.hero-bg{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  filter: blur(26px) saturate(1.05);
+  transform: scale(1.12);
+  opacity: .55;
+}
+
+.hero-stage{
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  height: clamp(200px, 56.25vw, 422px);
+
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: var(--shadow2);
+  background: rgba(34, 10, 14, .38);
+  overflow: hidden;
+}
+
+.hero-img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: saturate(1.05) contrast(1.05);
+  display:block;
+}
+
+.hero-img--current{
+  opacity: 1;
+  transition: opacity 900ms ease;
+}
+
+.hero-img--prev{
+  opacity: 1;
+  transition: opacity 900ms ease;
+}
+
+.hero-img--prev.is-fade{
+  opacity: 0;
+}
+
+/* SNS BAR */
+.snsbar{ margin: 10px 0 18px; }
+
+.snsbar .container{
+  background: var(--glass);
+  border: 1px solid var(--line);
+  border-radius: var(--radius2);
+  box-shadow: var(--shadow2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  overflow: hidden;
+}
+
+.snsbar-head{
+  text-align: center;
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255, 214, 140, .05));
+}
+
+.snsbar-title{
+  font-weight: 900;
+  letter-spacing: -.2px;
+  font-size: var(--fs-title);
+}
+
+.snsbar-sub{
+  margin-top: 4px;
+  font-size: var(--fs-sm);
+  line-height: 1.35;
+  opacity: .85;
+  color: var(--muted);
+}
+
+.snsbar-grid{
+  list-style:none;
+  margin: 0;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.snsbar-item{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  gap: 8px;
+  padding: 10px 8px;
+  border-radius: 16px;
+  text-decoration:none;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.07);
+  box-shadow: 0 10px 22px rgba(0,0,0,.20);
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.snsbar-item:hover{
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,.30);
+  background: rgba(255, 214, 140, .08);
+}
+
+.snsbar-ico{
+  width: 38px;
+  height: 38px;
+  display:grid;
+  place-items:center;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.16);
+  overflow:hidden;
+}
+
+.snsbar-ico img{
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 10px rgba(0,0,0,.35));
+}
+
+.snsbar-icoText{
+  font-weight: 950;
+  font-size: 16px;
+  color: rgba(255,255,255,.92);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.14),
+    0 0 8px rgba(255, 246, 220, .10),
+    0 0 6px rgba(255, 214, 140, .06);
+}
+
+.snsbar-label{
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.15;
+  text-align:center;
+  color: rgba(255,255,255,.90);
+}
+
+/* TABS */
+.tabs{
+  display:flex;
+  gap: 10px;
+  margin: 18px 0 14px;
+}
+
+.tab{
+  flex: 1 1 0;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.07);
+  color: var(--text);
+  cursor:pointer;
+  font-weight: 900;
+  letter-spacing: -.2px;
+  font-size: var(--fs-tab);
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+
+  /* ✅ 아이콘 배치 */
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.tab:hover{
+  transform: translateY(-1px);
+  border-color: rgba(255,255,255,.30);
+  background: rgba(255, 214, 140, .08);
+}
+
+.tab.is-active{
+  background: linear-gradient(180deg, rgba(255, 246, 220, .14), rgba(255,255,255,.06));
+  border-color: rgba(255,255,255,.34);
+}
+
+.tab-label{
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.tab-icon{
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  display:grid;
+  place-items:center;
+  font-weight: 950;
+  font-size: 18px;
+  line-height: 1;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  opacity: .95;
+}
+
+/* ✅ “찍찍이(≡)”는 살짝 튀게(누르라는 느낌) */
+.tab-icon.is-closed{
+  letter-spacing: -2px;
+  transform: translateY(-1px);
+}
+
+/* ✅ 열림(▾)은 안정감 있게 */
+.tab-icon.is-open{
+  font-size: 20px;
+  background: rgba(255, 214, 140, .08);
+  border-color: rgba(255,255,255,.26);
+}
+
+/* STACK */
+.stack{
+  display:flex;
+  flex-direction:column;
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+/* ✅ 모바일에서 “내용이 없을 때” 영상이 탭 바로 밑에 붙도록 */
+.stack--tight{
+  margin-top: 0;
+}
+
+/* CARD */
+.card{
+  background: var(--glass);
+  border: 1px solid var(--line);
+  border-radius: var(--radius2);
+  box-shadow: var(--shadow2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  overflow:hidden;
+}
+
+.card-head{
+  text-align: center;
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255, 214, 140, .05));
+}
+
+.card-title{
+  font-size: 20px;
+  font-weight: 950;
+  letter-spacing: -.2px;
+}
+
+.card-sub{
+  margin-top: 4px;
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* IMAGE GRID */
+.imgGrid{
+  padding: 14px;
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.imgCard{
+  margin:0;
+  border-radius: 18px;
+  overflow:hidden;
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(34, 10, 14, .26);
+  box-shadow: 0 14px 30px rgba(0,0,0,.25);
+}
+
+.imgCard img{
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  padding: 8px;
+}
+
+/* VIDEO */
+.videoGrid{
+  text-align: center;
+  padding: 14px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.videoBox{
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.05);
+  overflow:hidden;
+}
+
+.videoTitle{
+  padding: 12px 12px 10px;
+  font-weight: 900;
+  font-size: 20px;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  color: rgba(255,255,255,.92);
+}
+
+.videoFrame{ padding: 12px; }
+
+.videoFrame iframe{
+  width:100%;
+  aspect-ratio: 16 / 9;
+  border:0;
+  border-radius: 16px;
+  background: rgba(34, 10, 14, .26);
+  box-shadow: 0 16px 40px rgba(0,0,0,.45);
+}
+
+/* FOOTER */
+.footer{
+  padding: 30px;
+  color: var(--muted);
+  text-align:center;
+}
+.footer p{ margin: 0; }
+
+/* Floating buttons */
+.fab{
+  position: fixed;
+  right: 18px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(34, 10, 14, .58);
+  color: rgba(255,255,255,.92);
+  cursor:pointer;
+  box-shadow: var(--shadow2);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: transform .18s ease, background .18s ease, border-color .18s ease;
+  z-index: 60;
+}
+.fab-top{ bottom: 76px; }
+.fab-bottom{ bottom: 22px; }
+.fab:hover{
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,.30);
+  background: rgba(255, 214, 140, .12);
+}
+
+/* PREMIUM GLOW (Hover) */
+.card:hover,
+.snsbar-item:hover,
+.tab:hover,
+.videoBox:hover{
+  box-shadow:
+    0 16px 38px rgba(0,0,0,.52),
+    0 0 0 1px rgba(255,255,255,.10),
+    0 0 12px rgba(255, 246, 220, .12),
+    0 0 8px rgba(255, 214, 140, .08);
+  border-color: rgba(255,255,255,.24);
+}
+
+/* ✅ 전환 페이드(부드럽게) */
+@keyframes fadeInSoft{
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in{
+  animation: fadeInSoft 220ms ease both;
+}
+
+/* ✅ 980px 이하: 영상 2열 → 1열, 이미지 3열 → 1열 */
+@media (max-width: 980px){
+  .videoGrid{ grid-template-columns: 1fr; }
+  .imgGrid{ grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   ✅ 모바일 기준 통일: 820px
+   ========================================================= */
+@media (max-width: 820px){
+
+  /* HERO 모바일 */
+  .hero-bg{
+    filter: blur(18px) saturate(1.03);
+    opacity: .45;
+    transform: scale(1.10);
+  }
+
+  /* SNS 모바일 */
+  .snsbar-head{ padding: 12px 12px 8px; display: block; }
+  .snsbar-grid{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    padding: 10px;
+  }
+  .snsbar-item{ padding: 10px 6px; border-radius: 14px; }
+  .snsbar-ico{
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    border: none;
+    background: rgba(255,255,255,.08);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+  .snsbar-ico img{ width: 32px; height: 32px; object-fit: contain; }
+  .snsbar-icoText{
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 18px;
+    color: #fff;
+    background: rgb(0, 198, 66);
+    border: none;
+  }
+  .snsbar-label{ font-size: 11px; line-height: 1.1; }
+
+  /* tabs 모바일 */
+  .tabs{ gap: 8px; margin-top: 14px; }
+  .tab{
+    padding: 11px 12px;
+    border-radius: 14px;
+    font-size: 13px;
+  }
+
+  .tab-icon{
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+  .tab-icon.is-open{ font-size: 18px; }
+
+  /* ✅ 모바일에서 “내용 없을 때” 영상이 버튼에 최대한 붙도록 */
+  .stack--tight{
+    margin-top: -6px; /* 필요하면 -2 ~ -10 사이로 조절 가능 */
+  }
+}
+
+/* ✅ PC(821px~): (기존 유지) */
