@@ -230,9 +230,9 @@ body{
   /* 🔥 핵심 수정 포인트 */
   .hero-dots{
     margin-top: 3px;     /* ⬆ 위쪽 더 붙임 */
-    margin-bottom: 3px; /* ⬇ 아래는 살짝 띄움 */
+    margin-bottom: 5px; /* ⬇ 아래는 살짝 띄움 */
 
-    padding: 6px 10px;
+    padding: 8px 10px;
     gap: 10px;
   }
 

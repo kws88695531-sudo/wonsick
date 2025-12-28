@@ -6,31 +6,33 @@ export default function Hero() {
     []
   );
 
-  // ✅ “4초 보여주고 → 부드럽게 슬라이드”
-  const HOLD_MS = 4000;     // 머무는 시간
-  const SLIDE_MS = 1200;    // 넘어가는 시간(조금 느리게)
+  const HOLD_MS = 4000;   // 머무는 시간
+  const SLIDE_MS = 1200;  // 넘어가는 시간
 
   const realCount = images.length;
 
-  // ✅ 무한루프 튐 방지: 마지막에 첫장 clone 붙임
+  // ✅ 양방향 무한: [마지막클론, ...진짜들, 첫클론]
   const slides = useMemo(() => {
     if (!images.length) return [];
-    return [...images, images[0]];
+    const last = images[images.length - 1];
+    const first = images[0];
+    return [last, ...images, first];
   }, [images]);
 
-  // pos: 0..realCount (마지막은 clone)
-  const [pos, setPos] = useState(0);
+  // pos: 0..realCount+1
+  // ✅ 시작은 1(진짜 첫장)
+  const [pos, setPos] = useState(1);
   const [isAnimating, setIsAnimating] = useState(true);
 
-  // ✅ dots는 “즉시” 바뀌어야 하니까 논리 인덱스(0..realCount-1)로 따로 계산
-  const active = realCount ? (pos === realCount ? 0 : pos) : 0;
+  // ✅ dots용 논리 인덱스(0..realCount-1)
+  const active = realCount ? ((pos - 1 + realCount) % realCount) : 0;
   const currentSrc = realCount ? `/${images[active]}` : "";
 
-  // autoplay 타이머
+  // autoplay
   const timerRef = useRef(null);
-
-  // 드래그 상태
   const viewportRef = useRef(null);
+
+  // drag
   const startXRef = useRef(0);
   const lastXRef = useRef(0);
   const draggingRef = useRef(false);
@@ -44,7 +46,8 @@ export default function Hero() {
   const scheduleNext = () => {
     clearTimer();
     timerRef.current = setTimeout(() => {
-      goNext();
+      setIsAnimating(true);
+      setPos((p) => p + 1);
     }, HOLD_MS);
   };
 
@@ -54,64 +57,49 @@ export default function Hero() {
   };
 
   const goNext = () => {
-    // ✅ 넘어가는 순간 dots가 바로 바뀌게: pos를 즉시 올림
-    goTo(pos + 1, true);
+    setIsAnimating(true);
+    setPos((p) => p + 1);
   };
 
   const goPrev = () => {
-    // ✅ 0에서 왼쪽으로 가면 “마지막(진짜)”로 순간이동 후 애니메이션
-    if (pos === 0) {
-      // 1) transition 없이 마지막(진짜 마지막=realCount-1) 위치로 점프
-      setIsAnimating(false);
-      setPos(realCount - 1);
-
-      // 2) 다음 프레임에서 transition 켜고 한 칸 더 왼쪽(=realCount-2)로 이동
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          setIsAnimating(true);
-          setPos(realCount - 2);
-        });
-      });
-      return;
-    }
-    goTo(pos - 1, true);
+    setIsAnimating(true);
+    setPos((p) => p - 1);
   };
 
-  // ✅ pos가 바뀌면(=슬라이드 시작) autoplay를 멈추고,
-  //    애니메이션이 끝난 뒤에 다시 4초 카운트다운 시작(요구사항)
+  // ✅ 최초 진입: 4초 후 다음으로
   useEffect(() => {
     if (!realCount) return;
-    clearTimer();
-    // transition 끝나면 scheduleNext를 transitionend에서 호출할 거라 여기선 안 건드림
-  }, [pos, realCount]);
+    scheduleNext();
+    return clearTimer;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [realCount]);
 
   // ✅ transition 끝나면:
-  // - clone(=pos===realCount)에 도착했으면 transition 끄고 0으로 "조용히" 점프
-  // - 그리고 4초 후 다음 슬라이드 예약
+  // - 끝(첫클론=realCount+1) 도착 → transition 끄고 1로 점프
+  // - 앞(마지막클론=0) 도착 → transition 끄고 realCount로 점프
+  // - 그리고 “넘긴 뒤부터” 4초 카운트다운 시작
   useEffect(() => {
     if (!realCount) return;
-
     const el = viewportRef.current;
     if (!el) return;
 
     const onTransitionEnd = (e) => {
-      // track transform transition 끝만 받기
       if (e.propertyName !== "transform") return;
 
-      // ✅ 마지막(clone) 도착 → 튐 없이 0으로 순간이동
-      if (pos === realCount) {
+      // 오른쪽 끝: 첫클론
+      if (pos === realCount + 1) {
         setIsAnimating(false);
-        setPos(0);
-
-        // 다음 프레임에 다시 애니메이션 켜기(이후 이동을 위해)
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            setIsAnimating(true);
-          });
-        });
+        setPos(1);
+        requestAnimationFrame(() => requestAnimationFrame(() => setIsAnimating(true)));
       }
 
-      // ✅ “다 넘기고 난 뒤부터 카운트다운” 시작
+      // 왼쪽 끝: 마지막클론
+      if (pos === 0) {
+        setIsAnimating(false);
+        setPos(realCount);
+        requestAnimationFrame(() => requestAnimationFrame(() => setIsAnimating(true)));
+      }
+
       scheduleNext();
     };
 
@@ -120,15 +108,7 @@ export default function Hero() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pos, realCount]);
 
-  // ✅ 최초 진입 시 4초 후 시작
-  useEffect(() => {
-    if (!realCount) return;
-    scheduleNext();
-    return clearTimer;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [realCount]);
-
-  // ✅ 이미지 프리로드(끊김 방지)
+  // ✅ 이미지 프리로드
   useEffect(() => {
     images.forEach((name) => {
       const img = new Image();
@@ -136,7 +116,7 @@ export default function Hero() {
     });
   }, [images]);
 
-  // ========== Drag/Swipe ==========
+  // width 측정
   const getWidth = () => {
     const w = viewportRef.current?.getBoundingClientRect().width;
     widthRef.current = w || 1;
@@ -155,17 +135,13 @@ export default function Hero() {
   };
 
   const handlePointerDown = (e) => {
-    // 클릭/드래그 시작 시 autoplay 멈춤
     clearTimer();
     draggingRef.current = true;
     startXRef.current = e.clientX;
     lastXRef.current = e.clientX;
     getWidth();
 
-    // 드래그 중 transition 끄기
     setIsAnimating(false);
-
-    // 캡처
     e.currentTarget.setPointerCapture?.(e.pointerId);
   };
 
@@ -185,30 +161,23 @@ export default function Hero() {
     const dx = lastXRef.current - startXRef.current;
     const threshold = widthRef.current * 0.18;
 
-    // 다시 transition 켜고 스냅
     setIsAnimating(true);
 
     if (dx < -threshold) {
-      // 왼쪽으로 드래그 => 다음
       goNext();
     } else if (dx > threshold) {
-      // 오른쪽으로 드래그 => 이전
       goPrev();
     } else {
-      // 원위치
       goTo(pos, true);
-      // 이동 안했으니 “다 넘긴 뒤 카운트다운” 규칙상 여기서 다시 예약
       scheduleNext();
     }
   };
 
   const onDotClick = (i) => {
     clearTimer();
-    goTo(i, true);
-    // transition 끝난 후 scheduleNext
+    goTo(i + 1, true); // ✅ dots(0..real-1) -> pos(1..real)
   };
 
-  // ✅ track 스타일
   const trackStyle = {
     transform: `translate3d(${-pos * 100}%,0,0)`,
     transitionDuration: isAnimating ? `${SLIDE_MS}ms` : "0ms",
@@ -217,14 +186,12 @@ export default function Hero() {
   return (
     <header className="hero">
       <div className="hero-inner">
-        {/* 뒤에 흐릿한 배경 */}
         <div
           className="hero-bg"
           style={{ backgroundImage: `url(${currentSrc})` }}
           aria-hidden="true"
         />
 
-        {/* ✅ 프레임(틀) */}
         <div className="hero-stage" aria-label="정책 배너">
           <div
             className="hero-viewport"
@@ -250,7 +217,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ✅ 점점점: hero-stage “아래”로 완전히 분리 */}
         <div className="hero-dots" aria-label="배너 페이지네이션">
           {images.map((_, i) => (
             <button
