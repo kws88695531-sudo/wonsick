@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 export default function Hero() {
   const images = useMemo(
-    () => ["first.png", "sicksick.png", "marin2.png", "marin3.png", "marin4.png"],
+    () => ["mongham.png", "first.png", "sicksick.png", "marin2.png", "marin3.png", "marin4.png"],
     []
   );
 
